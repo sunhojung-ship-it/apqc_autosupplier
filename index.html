@@ -2313,6 +2313,7 @@ svg {
   #apqc-supplier-navigator .apn-lex-stack {
     display: grid;
     gap: 0.85rem;
+    min-width: 0;
   }
 
   #apqc-supplier-navigator .apn-lex-section {
@@ -2338,6 +2339,8 @@ svg {
 
   #apqc-supplier-navigator .apn-lex-section-body {
     padding: 0.75rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   #apqc-supplier-navigator .apn-lex-table-wrap {
@@ -2530,6 +2533,33 @@ svg {
     color: var(--foreground);
     text-decoration: underline;
     text-underline-offset: 0.18em;
+  }
+
+  #apqc-supplier-navigator .apn-ui-platform-value {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0.65rem 0 0;
+  }
+
+  #apqc-supplier-navigator .apn-ui-platform-value > div {
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--border);
+  }
+
+  #apqc-supplier-navigator .apn-ui-platform-value dt {
+    color: var(--muted-foreground);
+  }
+
+  #apqc-supplier-navigator .apn-ui-platform-value dd {
+    margin: 0.18rem 0 0;
+  }
+
+  #apqc-supplier-navigator .apn-lex-section-body > p:first-child {
+    margin-top: 0;
+  }
+
+  #apqc-supplier-navigator .apn-lex-section-body > p:last-child {
+    margin-bottom: 0;
   }
 
   #apqc-supplier-navigator .apn-ui-scene {
@@ -3328,6 +3358,109 @@ svg {
     border-top-color: var(--viz-series-1);
   }
 
+  #apqc-supplier-navigator .apn-demo {
+    display: grid;
+    gap: 0.55rem;
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  #apqc-supplier-navigator .apn-demo-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    align-items: end;
+  }
+
+  #apqc-supplier-navigator .apn-demo-controls .form-label {
+    display: grid;
+    gap: 0.25rem;
+    min-width: min(18rem, 100%);
+    margin: 0;
+  }
+
+  #apqc-supplier-navigator .apn-demo-range {
+    display: grid;
+    grid-template-columns: minmax(10rem, 1fr) auto;
+    gap: 0.45rem;
+    align-items: center;
+    min-width: min(20rem, 100%);
+  }
+
+  #apqc-supplier-navigator .apn-demo output {
+    display: block;
+    min-height: 1.4rem;
+    color: var(--foreground);
+    overflow-wrap: anywhere;
+  }
+
+  #apqc-supplier-navigator .apn-demo-dialog {
+    width: min(34rem, calc(100% - 2rem));
+    max-height: calc(100% - 2rem);
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 0.55rem;
+    background: var(--popover);
+    color: var(--popover-foreground);
+    z-index: 100;
+  }
+
+  #apqc-supplier-navigator .apn-demo-dialog::backdrop {
+    background: color-mix(in srgb, var(--foreground) 35%, transparent);
+  }
+
+  #apqc-supplier-navigator .apn-demo-dialog header,
+  #apqc-supplier-navigator .apn-demo-dialog .apn-demo-dialog-body,
+  #apqc-supplier-navigator .apn-demo-dialog footer {
+    padding: 0.85rem 1rem;
+  }
+
+  #apqc-supplier-navigator .apn-demo-dialog header {
+    border-bottom: 1px solid var(--border);
+  }
+
+  #apqc-supplier-navigator .apn-demo-dialog footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.45rem;
+    border-top: 1px solid var(--border);
+  }
+
+  #apqc-supplier-navigator .apn-demo-dialog h3,
+  #apqc-supplier-navigator .apn-demo-dialog p {
+    margin: 0;
+  }
+
+  #apqc-supplier-navigator .is-demo-selected {
+    background: color-mix(in srgb, var(--viz-series-1) 14%, var(--card));
+    box-shadow: inset 3px 0 0 var(--viz-series-1);
+  }
+
+  #apqc-supplier-navigator .is-demo-updated {
+    background: color-mix(in srgb, var(--green) 16%, var(--card));
+  }
+
+  #apqc-supplier-navigator .apn-ui-research-note strong,
+  #apqc-supplier-navigator .apn-lex-record-head h3,
+  #apqc-supplier-navigator .apn-sf-record-header h3,
+  #apqc-supplier-navigator .apn-lex-table th,
+  #apqc-supplier-navigator .apn-lex-table td {
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 1080px) {
+    #apqc-supplier-navigator .apn-sf-workspace {
+      grid-template-columns: 1fr;
+    }
+
+    #apqc-supplier-navigator .apn-lex-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 760px) {
     #apqc-supplier-navigator .apn-sf-app-header {
       grid-template-columns: auto minmax(0, 1fr);
@@ -3417,9 +3550,76 @@ svg {
       grid-template-columns: 1fr;
     }
 
+    #apqc-supplier-navigator .apn-ui-bar-row {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    #apqc-supplier-navigator .apn-ui-bar-row .apn-lex-bar {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+
+    #apqc-supplier-navigator .apn-ui-branch {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    #apqc-supplier-navigator .apn-ui-aging {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
     #apqc-supplier-navigator .apn-ui-catalog aside {
       border-right: 0;
       border-bottom: 1px solid var(--border);
+    }
+
+    #apqc-supplier-navigator .apn-demo-controls {
+      align-items: stretch;
+    }
+
+    #apqc-supplier-navigator .apn-demo-controls .form-label,
+    #apqc-supplier-navigator .apn-demo-controls .btn,
+    #apqc-supplier-navigator .apn-demo-range {
+      width: 100%;
+    }
+
+    #apqc-supplier-navigator .apn-ui-graph,
+    #apqc-supplier-navigator .apn-ui-gantt,
+    #apqc-supplier-navigator .apn-ui-profit-bridge {
+      overflow-x: auto;
+    }
+
+    #apqc-supplier-navigator .apn-ui-graph svg,
+    #apqc-supplier-navigator .apn-ui-gantt {
+      min-width: 34rem;
+    }
+
+    #apqc-supplier-navigator .apn-ui-chart {
+      min-width: 26rem;
+    }
+
+    #apqc-supplier-navigator .apn-ui-panel:has(.apn-ui-chart) .apn-lex-section-body {
+      overflow-x: auto;
+    }
+
+    #apqc-supplier-navigator .apn-ui-profit-bridge {
+      min-width: 32rem;
+    }
+
+    #apqc-supplier-navigator .apn-ui-topology {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+      min-height: 0;
+    }
+
+    #apqc-supplier-navigator .apn-ui-topology > div,
+    #apqc-supplier-navigator .apn-ui-topology .hub {
+      position: static;
+      min-width: 0;
     }
 
     #apqc-supplier-navigator .apn-sf-kpi {
@@ -3471,6 +3671,59 @@ svg {
     #apqc-supplier-navigator .apn-lex-stage:last-child {
       border-bottom: 1px solid var(--border);
       border-radius: 0 0 0.35rem 0.35rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #apqc-supplier-navigator .apn-sf-app-header {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    #apqc-supplier-navigator .apn-sf-app-icon {
+      display: none;
+    }
+
+    #apqc-supplier-navigator .apn-sf-detail-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding: 0;
+    }
+
+    #apqc-supplier-navigator .apn-sf-detail-tab {
+      min-width: 0;
+      padding-inline: 0.45rem;
+    }
+
+    #apqc-supplier-navigator .apn-lex-body,
+    #apqc-supplier-navigator .apn-sf-record-header {
+      padding: 0.75rem;
+    }
+
+    #apqc-supplier-navigator .apn-lex-global {
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.45rem;
+    }
+
+    #apqc-supplier-navigator .apn-lex-nav {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    #apqc-supplier-navigator .apn-lex-nav span {
+      flex: 0 0 auto;
+    }
+
+    #apqc-supplier-navigator .apn-demo-range,
+    #apqc-supplier-navigator .apn-ui-signal {
+      grid-template-columns: 1fr;
+    }
+
+    #apqc-supplier-navigator .apn-ui-signal span:last-child {
+      grid-column: auto;
+    }
+
+    #apqc-supplier-navigator .apn-ui-risk-matrix {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
@@ -4039,7 +4292,7 @@ svg {
     "url": "https://www.salesforce.com/experience/cloud/"
   },
   "dataCloud": {
-    "label": "Data Cloud",
+    "label": "Data 360",
     "url": "https://www.salesforce.com/data/"
   },
   "fieldService": {
@@ -4169,9 +4422,9 @@ svg {
     ],
     "summaryKo": "OEM 조직, 플랫폼·프로그램, 접점과 경쟁 신호를 계정 맥락으로 통합해 기회 탐색의 공통 근거를 만든다.",
     "valueKo": "분산된 고객 정보를 찾는 시간을 줄이고, 근거가 약한 프로그램 추격을 조기에 걸러낸다.",
-    "core": "Sales Cloud · Data Cloud · Tableau",
+    "core": "Sales Cloud · Data 360 · Tableau",
     "partners": [],
-    "systems": "외부 시장정보, 고객 포털 및 ERP 매출 데이터를 Data Cloud로 연결",
+    "systems": "외부 시장정보, 고객 포털 및 ERP 매출 데이터를 Data 360으로 연결",
     "automation": "계정·프로그램 변화 요약, 관계 공백 탐지, 기회 신호 알림을 자동화",
     "limitation": "시장 데이터 자체의 정확도와 라이선스는 원천 제공자가 책임진다.",
     "evidence": [
@@ -4283,7 +4536,7 @@ svg {
     ],
     "summaryKo": "OEM·상위 Tier 세그먼트별 가치제안, 접점, 캠페인과 기술 콘텐츠 실행을 계정 단위로 연결한다.",
     "valueKo": "관계 중심 B2B 마케팅 활동이 실제 프로그램 파이프라인에 기여했는지 추적할 수 있다.",
-    "core": "Marketing Cloud Account Engagement · Data Cloud",
+    "core": "Marketing Cloud Account Engagement · Data 360",
     "partners": [],
     "systems": "제품 콘텐츠와 기술자료는 PIM·DAM과 연결",
     "automation": "계정 참여도 기반 후속 활동, 기술 콘텐츠 배포와 반응 알림",
@@ -5097,7 +5350,7 @@ svg {
     ],
     "summaryKo": "품질·납기·텔레메트리 신호를 고객 Case와 결합해 문제 확산 전에 조치를 제안한다.",
     "valueKo": "고객 에스컬레이션 이전에 위험을 다뤄 긴급대응 비용과 관계 손상을 줄인다.",
-    "core": "Agentforce Service · Data Cloud · Einstein",
+    "core": "Agentforce Service · Data 360 · Einstein",
     "partners": [],
     "systems": "MES·QMS·IoT·고객 Scorecard 신호",
     "automation": "이상 패턴 탐지, 영향 고객 요약, 선제 Case와 고객 연락 초안 생성",
@@ -5240,7 +5493,7 @@ svg {
     ],
     "summaryKo": "CRM을 ERP, MES, PLM, QMS와 EDI에 연결해 상업 생애주기의 공통 데이터 흐름을 만든다.",
     "valueKo": "수작업 재입력과 시스템 간 상태 불일치를 줄이고 end-to-end 추적성을 확보한다.",
-    "core": "MuleSoft Anypoint Platform · Data Cloud",
+    "core": "MuleSoft Anypoint Platform · Data 360",
     "partners": [],
     "systems": "SAP·Oracle·MES·PLM·QMS·EDI 네트워크",
     "automation": "파트너 온보딩, 메시지 추적, 데이터 품질 예외와 재처리 오케스트레이션",
@@ -5268,7 +5521,7 @@ svg {
     ],
     "summaryKo": "고객 집중, 단일소싱, 환율, 용량과 고객 재무위험을 기회·계정 승인에 연결한다.",
     "valueKo": "수주 전에 위험과 완화조치가 가격·계약·경영승인에 반영되도록 한다.",
-    "core": "Sales Cloud · Data Cloud · Flow",
+    "core": "Sales Cloud · Data 360 · Flow",
     "partners": [],
     "systems": "외부 신용·공급망 리스크, ERP·GRC",
     "automation": "리스크 신호, 점수 변화, 승인·완화조치와 에스컬레이션",
@@ -5406,9 +5659,33 @@ svg {
     "surface": "Actionable Relationship Center",
     "sourceLabel": "Actionable Relationship Center",
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=ind.mfg_arc.htm&language=en_US&type=5",
-    "featureKo": "OEM 계정과 프로그램·계약·기회의 관계를 탐색하는 인터랙티브 그래프",
+    "featureKo": "계정·프로그램·약정 관계는 ARC로 탐색하고, 외부 시장 신호는 Data 360 통합으로 보완",
     "badge": "관계 그래프",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-01\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-arc\">\n    <header><h3>Actionable Relationship Center</h3><span class=\"apn-lex-chip\">대화형 관계 그래프</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-graph\" role=\"img\" aria-label=\"OEM 계정, 프로그램, 연락처, 기회와 약정 관계도\">\n        <svg viewBox=\"0 0 620 300\">\n          <title>OEM 관계 그래프</title>\n          <g class=\"apn-ui-links\"><line x1=\"310\" y1=\"145\" x2=\"110\" y2=\"70\"/><line x1=\"310\" y1=\"145\" x2=\"105\" y2=\"230\"/><line x1=\"310\" y1=\"145\" x2=\"515\" y2=\"65\"/><line x1=\"310\" y1=\"145\" x2=\"520\" y2=\"225\"/><line x1=\"110\" y1=\"70\" x2=\"515\" y2=\"65\"/></g>\n          <g class=\"apn-ui-node is-primary\"><rect x=\"230\" y=\"110\" width=\"160\" height=\"70\" rx=\"16\"/><text x=\"310\" y=\"139\">글로벌 OEM 계정</text><text x=\"310\" y=\"160\">전략 관계 82%</text></g>\n          <g class=\"apn-ui-node\"><rect x=\"45\" y=\"38\" width=\"130\" height=\"62\" rx=\"12\"/><text x=\"110\" y=\"65\">구매 조직</text><text x=\"110\" y=\"84\">14명</text></g>\n          <g class=\"apn-ui-node\"><rect x=\"40\" y=\"200\" width=\"130\" height=\"62\" rx=\"12\"/><text x=\"105\" y=\"227\">전동화 프로그램</text><text x=\"105\" y=\"246\">4건</text></g>\n          <g class=\"apn-ui-node\"><rect x=\"450\" y=\"34\" width=\"130\" height=\"62\" rx=\"12\"/><text x=\"515\" y=\"61\">영업 기회</text><text x=\"515\" y=\"80\">$48M</text></g>\n          <g class=\"apn-ui-node\"><rect x=\"455\" y=\"194\" width=\"130\" height=\"62\" rx=\"12\"/><text x=\"520\" y=\"221\">Sales Agreement</text><text x=\"520\" y=\"240\">3건</text></g>\n        </svg>\n      </div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-01\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-arc\">\n    <header><h3>Actionable Relationship Center</h3><span class=\"apn-lex-chip\">대화형 관계 그래프</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-graph\" role=\"img\" aria-label=\"OEM 계정, 프로그램, 연락처, 기회와 약정 관계도\">\n        <svg viewBox=\"0 0 620 300\">\n          <title>OEM 관계 그래프</title>\n          <g class=\"apn-ui-links\"><line x1=\"310\" y1=\"145\" x2=\"110\" y2=\"70\"/><line x1=\"310\" y1=\"145\" x2=\"105\" y2=\"230\"/><line x1=\"310\" y1=\"145\" x2=\"515\" y2=\"65\"/><line x1=\"310\" y1=\"145\" x2=\"520\" y2=\"225\"/><line x1=\"110\" y1=\"70\" x2=\"515\" y2=\"65\"/></g>\n          <g class=\"apn-ui-node is-primary\"><rect x=\"230\" y=\"110\" width=\"160\" height=\"70\" rx=\"16\"/><text x=\"310\" y=\"139\">글로벌 OEM 계정</text><text x=\"310\" y=\"160\">전략 관계 82%</text></g>\n          <g class=\"apn-ui-node\"><rect x=\"45\" y=\"38\" width=\"130\" height=\"62\" rx=\"12\"/><text x=\"110\" y=\"65\">구매 조직</text><text x=\"110\" y=\"84\">14명</text></g>\n          <g class=\"apn-ui-node\"><rect x=\"40\" y=\"200\" width=\"130\" height=\"62\" rx=\"12\"/><text x=\"105\" y=\"227\">전동화 프로그램</text><text x=\"105\" y=\"246\">4건</text></g>\n          <g class=\"apn-ui-node\"><rect x=\"450\" y=\"34\" width=\"130\" height=\"62\" rx=\"12\"/><text x=\"515\" y=\"61\">영업 기회</text><text x=\"515\" y=\"80\">$48M</text></g>\n          <g class=\"apn-ui-node\"><rect x=\"455\" y=\"194\" width=\"130\" height=\"62\" rx=\"12\"/><text x=\"520\" y=\"221\">Sales Agreement</text><text x=\"520\" y=\"240\">3건</text></g>\n        </svg>\n      </div></div>\n  </section></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "관계 탐색",
+      "selector": ".apn-ui-node",
+      "options": [
+        {
+          "label": "글로벌 OEM",
+          "result": "계정 중심으로 구매조직·프로그램·기회·약정 관계를 표시했습니다."
+        },
+        {
+          "label": "구매 조직",
+          "result": "구매 이해관계자 14명과 미접촉 의사결정자 1명을 강조했습니다."
+        },
+        {
+          "label": "전동화 프로그램",
+          "result": "관련 기회 4건과 Sales Agreement 3건을 프로그램 맥락으로 좁혔습니다."
+        },
+        {
+          "label": "Sales Agreement",
+          "result": "계획 대비 실제 편차가 큰 장기 약정을 강조했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-02": {
     "recordTitle": "주요 OEM 18개월 합의 수요계획",
@@ -5435,13 +5712,41 @@ svg {
     ],
     "id": "SF-02",
     "screenKey": "advanced-forecast",
-    "product": "Agentforce Manufacturing",
+    "product": "Agentforce Manufacturing + ketteQ",
     "surface": "Advanced Account Forecasting",
     "sourceLabel": "Advanced Account Forecasting",
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=ind.aaf_admin_parent_concept.htm&language=en_US&type=5",
-    "featureKo": "기회·주문·Sales Agreement를 기간·계정·제품 차원으로 조정하는 예측 그리드",
+    "featureKo": "기회·주문·Sales Agreement 예측은 Salesforce에서 조정하고 공급 제약은 ketteQ 결과를 반영",
     "badge": "예측 세트",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-02\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-forecast\">\n    <header><h3>Advanced Account Forecasting</h3><span class=\"apn-lex-chip\">조정 가능</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>계정 / 제품</th><th>2026 Q3</th><th>2026 Q4</th><th>2027 Q1</th><th>조정</th><th>사유</th></tr></thead>\n      <tbody><tr><td>OEM A · e-액슬</td><td>124K</td><td>138K</td><td>151K</td><td><strong>+8K</strong></td><td>플랫폼 Ramp-up</td></tr><tr><td>OEM B · BMS</td><td>86K</td><td>83K</td><td>91K</td><td><strong>-6K</strong></td><td>반도체 제약</td></tr><tr><td>OEM C · Housing</td><td>62K</td><td>71K</td><td>77K</td><td><strong>+3K</strong></td><td>Nomination 반영</td></tr></tbody>\n    </table>\n  </div><div class=\"apn-ui-split\"><div><div class=\"apn-ui-bar-list\">\n  <div class=\"apn-ui-bar-row\">\n    <span>기회</span><div class=\"apn-lex-bar\"><span style=\"width:22%\"></span></div><strong>22%</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>주문</span><div class=\"apn-lex-bar\"><span style=\"width:31%\"></span></div><strong>31%</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>Sales Agreement</span><div class=\"apn-lex-bar\"><span style=\"width:47%\"></span></div><strong>47%</strong>\n  </div></div></div><div class=\"apn-ui-callout\"><strong>조정 제출</strong><span>계정·기간·제품 차원별 Forecast Fact를 승인 흐름으로 전달</span></div></div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-02\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-forecast\">\n    <header><h3>Advanced Account Forecasting</h3><span class=\"apn-lex-chip\">조정 가능</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>계정 / 제품</th><th>2026 Q3</th><th>2026 Q4</th><th>2027 Q1</th><th>조정</th><th>사유</th></tr></thead>\n      <tbody><tr><td>OEM A · e-액슬</td><td>124K</td><td>138K</td><td>151K</td><td><strong>+8K</strong></td><td>플랫폼 Ramp-up</td></tr><tr><td>OEM B · BMS</td><td>86K</td><td>83K</td><td>91K</td><td><strong>-6K</strong></td><td>반도체 제약</td></tr><tr><td>OEM C · Housing</td><td>62K</td><td>71K</td><td>77K</td><td><strong>+3K</strong></td><td>Nomination 반영</td></tr></tbody>\n    </table>\n  </div><div class=\"apn-ui-split\"><div><div class=\"apn-ui-bar-list\">\n  <div class=\"apn-ui-bar-row\">\n    <span>기회</span><div class=\"apn-lex-bar\"><span style=\"width:22%\"></span></div><strong>22%</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>주문</span><div class=\"apn-lex-bar\"><span style=\"width:31%\"></span></div><strong>31%</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>Sales Agreement</span><div class=\"apn-lex-bar\"><span style=\"width:47%\"></span></div><strong>47%</strong>\n  </div></div></div><div class=\"apn-ui-callout\"><strong>조정 제출</strong><span>계정·기간·제품 차원별 Forecast Fact를 승인 흐름으로 전달</span></div></div></div>\n  </section></div>",
+    "interaction": {
+      "type": "scenario",
+      "label": "예측 시나리오",
+      "options": [
+        {
+          "label": "비제약 수요",
+          "result": "기회·주문·약정 기반 수요를 표시했습니다.",
+          "metricValue": "88%",
+          "metricContext": "비제약 예측 정확도",
+          "attainment": 88
+        },
+        {
+          "label": "공급 제약 반영",
+          "result": "ketteQ 제약 결과를 반영해 OEM B 수요를 6K 조정했습니다.",
+          "metricValue": "84%",
+          "metricContext": "제약 반영 예측 정확도",
+          "attainment": 84
+        },
+        {
+          "label": "합의 예측",
+          "result": "영업·운영 조정을 잠그고 합의 버전을 생성했습니다.",
+          "metricValue": "91%",
+          "metricContext": "합의 예측 정확도",
+          "attainment": 91
+        }
+      ],
+      "initial": "시나리오를 바꾸면 화면과 KPI가 함께 갱신됩니다."
+    }
   },
   "SF-03": {
     "recordTitle": "글로벌 OEM 계정·프로그램 관계도",
@@ -5474,7 +5779,31 @@ svg {
     "sourceUrl": "https://www.salesforce.com/manufacturing/cloud/sales/",
     "featureKo": "계정, 연락처, 프로그램, 약정과 활동을 한 레코드에서 보는 고객 360 화면",
     "badge": "계정 360",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-03\"><div class=\"apn-ui-split apn-ui-account360\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>계정 하이라이트</h3><span class=\"apn-lex-chip\">Account</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">글로벌 매출</span><strong>$184M</strong><span class=\"text-small\">전년 대비 +8%</span></div><div><span class=\"text-small text-muted\">활성 프로그램</span><strong>12</strong><span class=\"text-small\">SOP 3건</span></div><div><span class=\"text-small text-muted\">관계 건강도</span><strong>82</strong><span class=\"text-small\">구매 공백 1건</span></div>\n  </div><dl class=\"apn-ui-fields\"><div><dt>본사</dt><dd>Seoul</dd></div><div><dt>주요 공장</dt><dd>6</dd></div><div><dt>결제조건</dt><dd>월말 +60일</dd></div><div><dt>담당 KAM</dt><dd>김영업</dd></div></dl></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>관련 레코드</h3><span class=\"apn-lex-chip\">Customer 360</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-record-list\"><div><strong>연락처</strong><span>구매 8 · 기술 12 · 품질 5</span></div><div><strong>프로그램</strong><span>e-Platform 4 · ICE 8</span></div><div><strong>약정</strong><span>활성 3 · 갱신 1</span></div><div><strong>서비스</strong><span>Open Case 2</span></div></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-03\"><div class=\"apn-ui-split apn-ui-account360\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>계정 하이라이트</h3><span class=\"apn-lex-chip\">Account</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">글로벌 매출</span><strong>$184M</strong><span class=\"text-small\">전년 대비 +8%</span></div><div><span class=\"text-small text-muted\">활성 프로그램</span><strong>12</strong><span class=\"text-small\">SOP 3건</span></div><div><span class=\"text-small text-muted\">관계 건강도</span><strong>82</strong><span class=\"text-small\">구매 공백 1건</span></div>\n  </div><dl class=\"apn-ui-fields\"><div><dt>본사</dt><dd>Seoul</dd></div><div><dt>주요 공장</dt><dd>6</dd></div><div><dt>결제조건</dt><dd>월말 +60일</dd></div><div><dt>담당 KAM</dt><dd>김영업</dd></div></dl></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>관련 레코드</h3><span class=\"apn-lex-chip\">Customer 360</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-record-list\"><div><strong>연락처</strong><span>구매 8 · 기술 12 · 품질 5</span></div><div><strong>프로그램</strong><span>e-Platform 4 · ICE 8</span></div><div><strong>약정</strong><span>활성 3 · 갱신 1</span></div><div><strong>서비스</strong><span>Open Case 2</span></div></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "관련 레코드",
+      "selector": ".apn-ui-record-list > div",
+      "options": [
+        {
+          "label": "연락처",
+          "result": "구매·기술·품질 연락처와 최근 활동을 계정 맥락으로 열었습니다."
+        },
+        {
+          "label": "프로그램",
+          "result": "활성 프로그램 12건을 SOP와 플랫폼별로 표시했습니다."
+        },
+        {
+          "label": "약정",
+          "result": "Sales Agreement 3건과 갱신 예정 1건을 표시했습니다."
+        },
+        {
+          "label": "서비스",
+          "result": "열린 고객 Case 2건과 SLA 위험을 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-04": {
     "recordTitle": "프로그램 추격 우선순위 포트폴리오",
@@ -5507,7 +5836,27 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=ai.einstein_sales_opportunity_scoring.htm&language=en_US&type=5",
     "featureKo": "1–99 기회 점수와 긍정·부정 요인을 함께 보여주는 우선순위 목록",
     "badge": "AI 점수",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-04\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-score\">\n    <header><h3>Einstein Opportunity Scoring</h3><span class=\"apn-lex-chip\">1–99</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-ranked\">\n        <div><span class=\"apn-ui-score\">92</span><strong>800V 인버터 프로그램</strong><span>관계 활동 증가 · 유사 수주 패턴</span><span class=\"apn-lex-chip is-ok\">우선 추격</span></div>\n        <div><span class=\"apn-ui-score\">81</span><strong>e-액슬 Housing Gen3</strong><span>가격경쟁 심화 · 기술 적합성 높음</span><span class=\"apn-lex-chip\">검토</span></div>\n        <div><span class=\"apn-ui-score\">64</span><strong>ICE Bracket Renewal</strong><span>고객 응답 지연 · 시장 축소</span><span class=\"apn-lex-chip is-warning\">주의</span></div>\n      </div><div class=\"apn-ui-factors\"><span>긍정 요인: 임원 접점 · 과거 수주</span><span>부정 요인: 일정 지연 · 마진 예외</span></div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-04\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-score\">\n    <header><h3>Einstein Opportunity Scoring</h3><span class=\"apn-lex-chip\">1–99</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-ranked\">\n        <div><span class=\"apn-ui-score\">92</span><strong>800V 인버터 프로그램</strong><span>관계 활동 증가 · 유사 수주 패턴</span><span class=\"apn-lex-chip is-ok\">우선 추격</span></div>\n        <div><span class=\"apn-ui-score\">81</span><strong>e-액슬 Housing Gen3</strong><span>가격경쟁 심화 · 기술 적합성 높음</span><span class=\"apn-lex-chip\">검토</span></div>\n        <div><span class=\"apn-ui-score\">64</span><strong>ICE Bracket Renewal</strong><span>고객 응답 지연 · 시장 축소</span><span class=\"apn-lex-chip is-warning\">주의</span></div>\n      </div><div class=\"apn-ui-factors\"><span>긍정 요인: 임원 접점 · 과거 수주</span><span>부정 요인: 일정 지연 · 마진 예외</span></div></div>\n  </section></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "점수 기준",
+      "selector": ".apn-ui-ranked > div",
+      "options": [
+        {
+          "label": "최상위 기회",
+          "result": "Einstein 점수 92점 기회를 우선 추격 대상으로 선택했습니다."
+        },
+        {
+          "label": "관계 보강 필요",
+          "result": "점수 81점 기회의 구매 접점 공백을 다음 행동으로 표시했습니다."
+        },
+        {
+          "label": "저우선 기회",
+          "result": "점수 64점 기회를 리소스 재검토 대상으로 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-05": {
     "recordTitle": "OEM·상위 Tier 계정 접점 계획",
@@ -5540,7 +5889,15 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=sf.pardot_engagement_studio_overview.htm&language=en_US&type=5",
     "featureKo": "액션·트리거·규칙을 분기시켜 전략계정 육성 여정을 설계하는 캔버스",
     "badge": "여정 캔버스",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-05\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-journey\">\n    <header><h3>Engagement Studio</h3><span class=\"apn-lex-chip\">Version 7</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-journey\" role=\"img\" aria-label=\"전략계정 기술 콘텐츠 육성 여정\">\n        <div class=\"apn-ui-journey-node action\"><strong>Send Email</strong><span>전동화 열관리 백서</span></div>\n        <span class=\"apn-ui-journey-line\">↓</span>\n        <div class=\"apn-ui-journey-node trigger\"><strong>Email Open?</strong><span>3일 대기</span></div>\n        <div class=\"apn-ui-branch\"><div><span>Yes</span><div class=\"apn-ui-journey-node action\"><strong>Create Task</strong><span>KAM 기술 미팅</span></div></div><div><span>No</span><div class=\"apn-ui-journey-node rule\"><strong>Score ≥ 60?</strong><span>재육성 분기</span></div></div></div>\n      </div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-05\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-journey\">\n    <header><h3>Engagement Studio</h3><span class=\"apn-lex-chip\">Version 7</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-journey\" role=\"img\" aria-label=\"전략계정 기술 콘텐츠 육성 여정\">\n        <div class=\"apn-ui-journey-node action\"><strong>Send Email</strong><span>전동화 열관리 백서</span></div>\n        <span class=\"apn-ui-journey-line\">↓</span>\n        <div class=\"apn-ui-journey-node trigger\"><strong>Email Open?</strong><span>3일 대기</span></div>\n        <div class=\"apn-ui-branch\"><div><span>Yes</span><div class=\"apn-ui-journey-node action\"><strong>Create Task</strong><span>KAM 기술 미팅</span></div></div><div><span>No</span><div class=\"apn-ui-journey-node rule\"><strong>Score ≥ 60?</strong><span>재육성 분기</span></div></div></div>\n      </div></div>\n  </section></div>",
+    "interaction": {
+      "type": "advance",
+      "label": "다음 여정 단계 실행",
+      "selector": ".apn-ui-journey-node",
+      "outcome": "Email Open 분기를 평가하고 KAM 기술 미팅 태스크를 생성했습니다.",
+      "doneLabel": "태스크 생성됨",
+      "initial": "현재 단계와 후속 작업을 확인하세요."
+    }
   },
   "SF-06": {
     "recordTitle": "전략계정 관계 프로그램",
@@ -5573,7 +5930,27 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=sales.account_plans.htm&language=en_US&type=5",
     "featureKo": "SWOT, 목표, 측정지표와 실행항목을 묶는 전략계정 계획 워크스페이스",
     "badge": "계정 계획",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-06\"><div class=\"apn-ui-split\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Account Plan · OEM A</h3><span class=\"apn-lex-chip\">전략계정</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-swot\"><div><strong>S</strong><span>열관리 특허·현지 생산</span></div><div><strong>W</strong><span>SW 역량 공백</span></div><div><strong>O</strong><span>800V 플랫폼 확대</span></div><div><strong>T</strong><span>중국 경쟁사 가격</span></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Objectives</h3><span class=\"apn-lex-chip\">3개</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>목표</th><th>측정지표</th><th>오너</th><th>진척</th></tr></thead>\n      <tbody><tr><td>2028 EV 점유 확대</td><td>SOP 2건</td><td>KAM</td><td>68%</td></tr><tr><td>기술 임원 관계</td><td>분기 2회</td><td>CTO</td><td>75%</td></tr><tr><td>미회수 종결</td><td>$0.4M</td><td>Finance</td><td>42%</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-06\"><div class=\"apn-ui-split\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Account Plan · OEM A</h3><span class=\"apn-lex-chip\">전략계정</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-swot\"><div><strong>S</strong><span>열관리 특허·현지 생산</span></div><div><strong>W</strong><span>SW 역량 공백</span></div><div><strong>O</strong><span>800V 플랫폼 확대</span></div><div><strong>T</strong><span>중국 경쟁사 가격</span></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Objectives</h3><span class=\"apn-lex-chip\">3개</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>목표</th><th>측정지표</th><th>오너</th><th>진척</th></tr></thead>\n      <tbody><tr><td>2028 EV 점유 확대</td><td>SOP 2건</td><td>KAM</td><td>68%</td></tr><tr><td>기술 임원 관계</td><td>분기 2회</td><td>CTO</td><td>75%</td></tr><tr><td>미회수 종결</td><td>$0.4M</td><td>Finance</td><td>42%</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "계정 목표",
+      "selector": ".apn-lex-table tbody tr",
+      "options": [
+        {
+          "label": "EV 점유 확대",
+          "result": "SOP 2건 목표와 관련 기회·실행항목을 표시했습니다."
+        },
+        {
+          "label": "임원 관계 강화",
+          "result": "분기 Executive 접점 목표와 미완료 후속조치를 표시했습니다."
+        },
+        {
+          "label": "미회수 종결",
+          "result": "가격·금형 미회수 $0.4M의 담당자와 기한을 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-07": {
     "recordTitle": "계정 기반 마케팅 성과",
@@ -5606,7 +5983,35 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=mktg.pardot_analytics_b2bmaplus_mci_dashboard_ref.htm&language=en_US&type=5",
     "featureKo": "계정·캠페인·기간 필터와 파이프라인 기여 위젯을 조합한 성과 대시보드",
     "badge": "마케팅 분석",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-07\"><div class=\"apn-ui-dashboard-grid\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>파이프라인 기여 추세</h3><span class=\"apn-lex-chip\">Marketing Campaign Intelligence</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-chart\" viewBox=\"0 0 420 155\" role=\"img\" aria-label=\"월별 마케팅 기여 파이프라인\">\n    <title>월별 마케팅 기여 파이프라인</title>\n    <line x1=\"30\" y1=\"125\" x2=\"390\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <line x1=\"30\" y1=\"25\" x2=\"30\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <polyline points=\"30,89 102,80 174,84 246,67 318,53 390,42\" class=\"apn-ui-line\"/>\n    <circle cx=\"30\" cy=\"89\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"30\" y=\"145\" text-anchor=\"middle\">1월</text><circle cx=\"102\" cy=\"80\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"102\" y=\"145\" text-anchor=\"middle\">2월</text><circle cx=\"174\" cy=\"84\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"174\" y=\"145\" text-anchor=\"middle\">3월</text><circle cx=\"246\" cy=\"67\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"246\" y=\"145\" text-anchor=\"middle\">4월</text><circle cx=\"318\" cy=\"53\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"318\" y=\"145\" text-anchor=\"middle\">5월</text><circle cx=\"390\" cy=\"42\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"390\" y=\"145\" text-anchor=\"middle\">6월</text>\n  </svg></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>계정 참여 퍼널</h3><span class=\"apn-lex-chip\">OEM 세그먼트</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-funnel\"><div style=\"width:100%\">대상 계정 84</div><div style=\"width:78%\">콘텐츠 참여 66</div><div style=\"width:52%\">MQL 44</div><div style=\"width:29%\">기회 24</div></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-07\"><div class=\"apn-ui-dashboard-grid\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>파이프라인 기여 추세</h3><span class=\"apn-lex-chip\">Marketing Campaign Intelligence</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-chart\" viewBox=\"0 0 420 155\" role=\"img\" aria-label=\"월별 마케팅 기여 파이프라인\">\n    <title>월별 마케팅 기여 파이프라인</title>\n    <line x1=\"30\" y1=\"125\" x2=\"390\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <line x1=\"30\" y1=\"25\" x2=\"30\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <polyline points=\"30,89 102,80 174,84 246,67 318,53 390,42\" class=\"apn-ui-line\"/>\n    <circle cx=\"30\" cy=\"89\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"30\" y=\"145\" text-anchor=\"middle\">1월</text><circle cx=\"102\" cy=\"80\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"102\" y=\"145\" text-anchor=\"middle\">2월</text><circle cx=\"174\" cy=\"84\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"174\" y=\"145\" text-anchor=\"middle\">3월</text><circle cx=\"246\" cy=\"67\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"246\" y=\"145\" text-anchor=\"middle\">4월</text><circle cx=\"318\" cy=\"53\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"318\" y=\"145\" text-anchor=\"middle\">5월</text><circle cx=\"390\" cy=\"42\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"390\" y=\"145\" text-anchor=\"middle\">6월</text>\n  </svg></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>계정 참여 퍼널</h3><span class=\"apn-lex-chip\">OEM 세그먼트</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-funnel\"><div style=\"width:100%\">대상 계정 84</div><div style=\"width:78%\">콘텐츠 참여 66</div><div style=\"width:52%\">MQL 44</div><div style=\"width:29%\">기회 24</div></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "scenario",
+      "label": "대상 세그먼트",
+      "options": [
+        {
+          "label": "전체 전략계정",
+          "result": "84개 계정 기준 파이프라인 기여를 표시했습니다.",
+          "metricValue": "24%",
+          "metricContext": "기여 파이프라인",
+          "attainment": 96
+        },
+        {
+          "label": "전동화 OEM",
+          "result": "EV 계정의 콘텐츠 참여와 기회 전환만 표시했습니다.",
+          "metricValue": "31%",
+          "metricContext": "EV 기여 파이프라인",
+          "attainment": 100
+        },
+        {
+          "label": "상위 Tier-1",
+          "result": "공동개발 캠페인의 파이프라인 영향을 표시했습니다.",
+          "metricValue": "19%",
+          "metricContext": "Tier-1 기여 파이프라인",
+          "attainment": 76
+        }
+      ],
+      "initial": "시나리오를 바꾸면 화면과 KPI가 함께 갱신됩니다."
+    }
   },
   "SF-08": {
     "recordTitle": "글로벌 계정 커버리지 모델",
@@ -5639,7 +6044,27 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=sales.tm2_intro.htm&language=en_US&type=5",
     "featureKo": "글로벌 OEM·지역·제품군 영업영역의 계층과 계정 배정을 관리하는 화면",
     "badge": "영업 영역",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-08\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-tree\">\n    <header><h3>Enterprise Territory Management</h3><span class=\"apn-lex-chip\">FY26 모델</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-tree\"><div class=\"root\"><strong>Global Automotive</strong><span>124 Accounts</span></div><div class=\"children\"><div><strong>APAC</strong><span>OEM A · 31</span><div class=\"leaf\">Korea EV · 김 KAM</div><div class=\"leaf\">Japan Tier-1 · Sato</div></div><div><strong>EMEA</strong><span>OEM B · 46</span><div class=\"leaf\">DACH · Müller</div><div class=\"leaf\">CEE · Nowak</div></div><div><strong>Americas</strong><span>OEM C · 47</span><div class=\"leaf\">Detroit · Smith</div><div class=\"leaf\">Mexico · Garcia</div></div></div></div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-08\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-tree\">\n    <header><h3>Enterprise Territory Management</h3><span class=\"apn-lex-chip\">FY26 모델</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-tree\"><div class=\"root\"><strong>Global Automotive</strong><span>124 Accounts</span></div><div class=\"children\"><div><strong>APAC</strong><span>OEM A · 31</span><div class=\"leaf\">Korea EV · 김 KAM</div><div class=\"leaf\">Japan Tier-1 · Sato</div></div><div><strong>EMEA</strong><span>OEM B · 46</span><div class=\"leaf\">DACH · Müller</div><div class=\"leaf\">CEE · Nowak</div></div><div><strong>Americas</strong><span>OEM C · 47</span><div class=\"leaf\">Detroit · Smith</div><div class=\"leaf\">Mexico · Garcia</div></div></div></div></div>\n  </section></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "영업영역",
+      "selector": ".apn-ui-tree .children > div",
+      "options": [
+        {
+          "label": "APAC",
+          "result": "APAC 31개 계정과 Korea EV 담당체계를 선택했습니다."
+        },
+        {
+          "label": "EMEA",
+          "result": "EMEA 46개 계정과 DACH·CEE 담당체계를 선택했습니다."
+        },
+        {
+          "label": "Americas",
+          "result": "Americas 47개 계정과 Detroit·Mexico 담당체계를 선택했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-09": {
     "recordTitle": "FY26 계정·프로그램 목표 추적",
@@ -5672,7 +6097,35 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=sales.forecasts3_territory_forecasts_overview.htm&language=en_US&type=5",
     "featureKo": "영업영역별 쿼터·파이프라인·Best Case·Commit을 롤업하는 예측표",
     "badge": "쿼터·예측",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-09\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-quota\">\n    <header><h3>Territory Forecasts</h3><span class=\"apn-lex-chip\">FY26 Q3</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>영업영역</th><th>Quota</th><th>Pipeline</th><th>Best Case</th><th>Commit</th><th>Gap</th></tr></thead>\n      <tbody><tr><td>APAC EV</td><td>$42M</td><td>$121M</td><td>$48M</td><td>$39M</td><td><strong>-$3M</strong></td></tr><tr><td>EMEA Thermal</td><td>$31M</td><td>$82M</td><td>$36M</td><td>$33M</td><td>+$2M</td></tr><tr><td>Americas Chassis</td><td>$27M</td><td>$69M</td><td>$29M</td><td>$25M</td><td><strong>-$2M</strong></td></tr></tbody>\n    </table>\n  </div><div class=\"apn-ui-rollup\">Territory hierarchy rollup <span>Seller → Region → Global</span></div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-09\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-quota\">\n    <header><h3>Territory Forecasts</h3><span class=\"apn-lex-chip\">FY26 Q3</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>영업영역</th><th>Quota</th><th>Pipeline</th><th>Best Case</th><th>Commit</th><th>Gap</th></tr></thead>\n      <tbody><tr><td>APAC EV</td><td>$42M</td><td>$121M</td><td>$48M</td><td>$39M</td><td><strong>-$3M</strong></td></tr><tr><td>EMEA Thermal</td><td>$31M</td><td>$82M</td><td>$36M</td><td>$33M</td><td>+$2M</td></tr><tr><td>Americas Chassis</td><td>$27M</td><td>$69M</td><td>$29M</td><td>$25M</td><td><strong>-$2M</strong></td></tr></tbody>\n    </table>\n  </div><div class=\"apn-ui-rollup\">Territory hierarchy rollup <span>Seller → Region → Global</span></div></div>\n  </section></div>",
+    "interaction": {
+      "type": "scenario",
+      "label": "Forecast category",
+      "options": [
+        {
+          "label": "Pipeline",
+          "result": "영업영역별 전체 파이프라인을 롤업했습니다.",
+          "metricValue": "3.4×",
+          "metricContext": "파이프라인 커버리지",
+          "attainment": 100
+        },
+        {
+          "label": "Best Case",
+          "result": "Best Case 기준으로 Q3 목표 부족 영역을 표시했습니다.",
+          "metricValue": "94%",
+          "metricContext": "Best Case 목표 커버리지",
+          "attainment": 94
+        },
+        {
+          "label": "Commit",
+          "result": "Commit 기준 APAC·Americas 부족분을 표시했습니다.",
+          "metricValue": "87%",
+          "metricContext": "Commit 목표 달성률",
+          "attainment": 87
+        }
+      ],
+      "initial": "시나리오를 바꾸면 화면과 KPI가 함께 갱신됩니다."
+    }
   },
   "SF-10": {
     "recordTitle": "공동개발·Tier-2 협업 포트폴리오",
@@ -5705,7 +6158,18 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=experience.networks_deal_reg_intro.htm&language=en_US&type=5",
     "featureKo": "파트너 온보딩과 공동기회 등록·승인·충돌 검토를 처리하는 포털",
     "badge": "파트너 포털",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-10\"><div class=\"apn-ui-portal\">\n      <div class=\"apn-ui-portal-hero\"><strong>Partner Central</strong><span>Tier-2 공동기회·자격 포털</span><button type=\"button\" class=\"btn btn-primary\" disabled>새 Deal 등록</button></div>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Deal Registration</h3><span class=\"apn-lex-chip\">3건 검토</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>Deal</th><th>파트너</th><th>충돌검토</th><th>상태</th></tr></thead>\n      <tbody><tr><td>EV Cooling Module</td><td>Supplier K</td><td>없음</td><td><span class=\"apn-lex-chip is-ok\">승인</span></td></tr><tr><td>Housing Gen3</td><td>JV M</td><td>KAM 검토</td><td><span class=\"apn-lex-chip is-warning\">심사 중</span></td></tr><tr><td>Sensor Bracket</td><td>Supplier T</td><td>중복 기회</td><td><span class=\"apn-lex-chip\">보류</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-10\"><div class=\"apn-ui-portal\">\n      <div class=\"apn-ui-portal-hero\"><strong>Partner Central</strong><span>Tier-2 공동기회·자격 포털</span><button type=\"button\" class=\"btn btn-primary\" data-demo-alias>새 Deal 등록</button></div>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Deal Registration</h3><span class=\"apn-lex-chip\">3건 검토</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>Deal</th><th>파트너</th><th>충돌검토</th><th>상태</th></tr></thead>\n      <tbody><tr><td>EV Cooling Module</td><td>Supplier K</td><td>없음</td><td><span class=\"apn-lex-chip is-ok\">승인</span></td></tr><tr><td>Housing Gen3</td><td>JV M</td><td>KAM 검토</td><td><span class=\"apn-lex-chip is-warning\">심사 중</span></td></tr><tr><td>Sensor Bracket</td><td>Supplier T</td><td>중복 기회</td><td><span class=\"apn-lex-chip\">보류</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "dialog",
+      "label": "Deal 등록",
+      "title": "파트너 Deal Registration",
+      "body": "파트너, 대상 계정, 예상 금액과 중복 기회 검토 결과를 확인한 뒤 제출합니다.",
+      "confirmLabel": "검토 요청",
+      "outcome": "공동기회를 등록하고 내부 Channel Manager 승인으로 라우팅했습니다.",
+      "selector": ".apn-lex-table tbody tr:nth-child(2) td:last-child",
+      "targetText": "검토 요청됨",
+      "initial": "작업을 열어 필수 조건과 결과를 확인하세요."
+    }
   },
   "SF-11": {
     "recordTitle": "e-액슬 하우징 프로그램 추격",
@@ -5738,7 +6202,15 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=ai.einstein_sales_opportunity_scoring.htm&language=en_US&type=5",
     "featureKo": "프로그램 기회의 단계, 점수, 핵심필드, 경쟁정보와 다음 행동을 집중 표시",
     "badge": "기회 레코드",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-11\"><div class=\"apn-ui-opportunity\">\n      <div class=\"apn-ui-opportunity-path\"><span class=\"done\">탐색</span><span class=\"done\">자격화</span><span class=\"active\">Bid/No-bid</span><span>견적</span><span>협상</span></div>\n      <div class=\"apn-ui-split\">\n        \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>기회 세부정보</h3><span class=\"apn-lex-chip\">Score 86</span></header>\n    <div class=\"apn-lex-section-body\"><dl class=\"apn-ui-fields\"><div><dt>프로그램</dt><dd>e-액슬 Housing Gen3</dd></div><div><dt>SOP</dt><dd>2027-09</dd></div><div><dt>수명매출</dt><dd>$78M</dd></div><div><dt>확률</dt><dd>55%</dd></div></dl></div>\n  </section>\n        \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Einstein Deal Insights</h3><span class=\"apn-lex-chip\">다음 행동</span></header>\n    <div class=\"apn-lex-section-body\"><ul class=\"apn-ui-action-list\"><li>원가 버전 3.2 승인 요청</li><li>구매총괄 접점 21일 경과</li><li>용량확약 미완료</li></ul></div>\n  </section>\n      </div>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-11\"><div class=\"apn-ui-opportunity\">\n      <div class=\"apn-ui-opportunity-path\"><span class=\"done\">탐색</span><span class=\"done\">자격화</span><span class=\"active\">Bid/No-bid</span><span>견적</span><span>협상</span></div>\n      <div class=\"apn-ui-split\">\n        \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>기회 세부정보</h3><span class=\"apn-lex-chip\">Score 86</span></header>\n    <div class=\"apn-lex-section-body\"><dl class=\"apn-ui-fields\"><div><dt>프로그램</dt><dd>e-액슬 Housing Gen3</dd></div><div><dt>SOP</dt><dd>2027-09</dd></div><div><dt>수명매출</dt><dd>$78M</dd></div><div><dt>확률</dt><dd>55%</dd></div></dl></div>\n  </section>\n        \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Einstein Deal Insights</h3><span class=\"apn-lex-chip\">다음 행동</span></header>\n    <div class=\"apn-lex-section-body\"><ul class=\"apn-ui-action-list\"><li>원가 버전 3.2 승인 요청</li><li>구매총괄 접점 21일 경과</li><li>용량확약 미완료</li></ul></div>\n  </section>\n      </div>\n    </div></div>",
+    "interaction": {
+      "type": "advance",
+      "label": "기회 단계 진행",
+      "selector": ".apn-ui-opportunity-path span",
+      "outcome": "Bid/No-bid 검토를 완료하고 견적 단계로 이동했습니다.",
+      "doneLabel": "견적 단계",
+      "initial": "현재 단계와 후속 작업을 확인하세요."
+    }
   },
   "SF-12": {
     "recordTitle": "e-액슬 하우징 RFQ 패키지",
@@ -5771,7 +6243,31 @@ svg {
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000GgSGcUAN",
     "featureKo": "RFQ 문서, 버전, 접근권한, 질의와 기능별 배포 상태를 통제하는 작업공간",
     "badge": "RFQ 통제",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-12\"><div class=\"apn-ui-split apn-ui-rfq\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>RFQ 문서함</h3><span class=\"apn-lex-chip\">Rev 05</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>문서</th><th>버전</th><th>접근</th><th>상태</th></tr></thead>\n      <tbody><tr><td>SOR_Main.pdf</td><td>05</td><td>영업·기술</td><td><span class=\"apn-lex-chip is-ok\">기준선</span></td></tr><tr><td>Volume.xlsx</td><td>03</td><td>원가·SCM</td><td>변경됨</td></tr><tr><td>Drawing_4412</td><td>B</td><td>기술</td><td>PLM 링크</td></tr><tr><td>Terms.docx</td><td>02</td><td>법무·재무</td><td>검토 중</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>배포·질의</h3><span class=\"apn-lex-chip\">RFXpress</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-version-log\"><div><strong>10:42</strong><span>Rev 05를 7개 기능에 배포</span></div><div><strong>11:18</strong><span>품질 요구 Q-014 등록</span></div><div><strong>13:05</strong><span>고객 답변으로 기준선 갱신</span></div></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-12\"><div class=\"apn-ui-split apn-ui-rfq\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>RFQ 문서함</h3><span class=\"apn-lex-chip\">Rev 05</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>문서</th><th>버전</th><th>접근</th><th>상태</th></tr></thead>\n      <tbody><tr><td>SOR_Main.pdf</td><td>05</td><td>영업·기술</td><td><span class=\"apn-lex-chip is-ok\">기준선</span></td></tr><tr><td>Volume.xlsx</td><td>03</td><td>원가·SCM</td><td>변경됨</td></tr><tr><td>Drawing_4412</td><td>B</td><td>기술</td><td>PLM 링크</td></tr><tr><td>Terms.docx</td><td>02</td><td>법무·재무</td><td>검토 중</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>배포·질의</h3><span class=\"apn-lex-chip\">RFXpress</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-version-log\"><div><strong>10:42</strong><span>Rev 05를 7개 기능에 배포</span></div><div><strong>11:18</strong><span>품질 요구 Q-014 등록</span></div><div><strong>13:05</strong><span>고객 답변으로 기준선 갱신</span></div></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "RFQ 문서",
+      "selector": ".apn-lex-table tbody tr",
+      "options": [
+        {
+          "label": "SOR 기준선",
+          "result": "SOR Rev 05의 접근권한과 배포대상을 표시했습니다."
+        },
+        {
+          "label": "물량 파일",
+          "result": "Volume Rev 03 변경분과 영향을 받는 원가·SCM 작업을 표시했습니다."
+        },
+        {
+          "label": "도면",
+          "result": "PLM의 통제 도면 Rev B 링크를 표시했습니다."
+        },
+        {
+          "label": "상업조건",
+          "result": "법무·재무 검토 중인 Terms Rev 02를 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-13": {
     "recordTitle": "구동모터 하우징 원가·기술 확약",
@@ -5804,7 +6300,21 @@ svg {
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=0669844d-358e-4b35-b210-0741612dc1ce",
     "featureKo": "재료·가공·금형·물류 원가, 목표마진과 고객가를 연결하는 원가명세 화면",
     "badge": "원가·가격",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-13\"><div class=\"apn-ui-costing\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Bottom-up Cost Breakdown</h3><span class=\"apn-lex-chip\">Xotigo</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>원가요소</th><th>단위</th><th>현재</th><th>목표</th><th>근거</th></tr></thead>\n      <tbody><tr><td>Aluminium Index</td><td>kg</td><td>$18.40</td><td>$17.90</td><td>LME + premium</td></tr><tr><td>Machining</td><td>min</td><td>$9.20</td><td>$8.70</td><td>Cycle 42 sec</td></tr><tr><td>Tooling amort.</td><td>part</td><td>$3.10</td><td>$3.10</td><td>400K pcs</td></tr><tr><td>Logistics</td><td>part</td><td>$2.60</td><td>$2.10</td><td>Milk-run</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Price Waterfall</h3><span class=\"apn-lex-chip\">목표마진 14%</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-waterfall\"><div style=\"height:68%\"><span>재료</span><strong>18.4</strong></div><div style=\"height:42%\"><span>가공</span><strong>9.2</strong></div><div style=\"height:25%\"><span>금형</span><strong>3.1</strong></div><div style=\"height:22%\"><span>물류</span><strong>2.6</strong></div><div class=\"total\" style=\"height:88%\"><span>고객가</span><strong>39.8</strong></div></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-13\"><div class=\"apn-ui-costing\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Bottom-up Cost Breakdown</h3><span class=\"apn-lex-chip\">Xotigo</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>원가요소</th><th>단위</th><th>현재</th><th>목표</th><th>근거</th></tr></thead>\n      <tbody><tr><td>Aluminium Index</td><td>kg</td><td>$18.40</td><td>$17.90</td><td>LME + premium</td></tr><tr><td>Machining</td><td>min</td><td>$9.20</td><td>$8.70</td><td>Cycle 42 sec</td></tr><tr><td>Tooling amort.</td><td>part</td><td>$3.10</td><td>$3.10</td><td>400K pcs</td></tr><tr><td>Logistics</td><td>part</td><td>$2.60</td><td>$2.10</td><td>Milk-run</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Price Waterfall</h3><span class=\"apn-lex-chip\">목표마진 14%</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-waterfall\"><div style=\"height:68%\"><span>재료</span><strong>18.4</strong></div><div style=\"height:42%\"><span>가공</span><strong>9.2</strong></div><div style=\"height:25%\"><span>금형</span><strong>3.1</strong></div><div style=\"height:22%\"><span>물류</span><strong>2.6</strong></div><div class=\"total\" style=\"height:88%\"><span>고객가</span><strong>39.8</strong></div></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "range",
+      "label": "목표 마진",
+      "min": 10,
+      "max": 20,
+      "value": 14,
+      "step": 1,
+      "unit": "%",
+      "actionLabel": "판매가 계산",
+      "outcomeTemplate": "목표 마진 {value}% 기준 고객가와 승인 필요 여부를 다시 계산했습니다.",
+      "selector": ".apn-ui-costing .apn-ui-panel:nth-child(2) header .apn-lex-chip",
+      "targetTemplate": "목표마진 {value}%",
+      "initial": "값을 조정한 뒤 계산을 실행하세요."
+    }
   },
   "SF-14": {
     "recordTitle": "전동화 부품 고객 제출 견적",
@@ -5837,7 +6347,21 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=sf.qocal_view_and_edit_quotes.htm&language=en_US&type=5",
     "featureKo": "견적 라인을 스프레드시트처럼 구성·가격결정·할인하고 상세 근거를 여는 편집기",
     "badge": "견적 라인",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-14\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-tle\">\n    <header><h3>Transaction Line Editor</h3><span class=\"apn-lex-chip\">Quote Q-004821</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-tle-toolbar\"><button type=\"button\" class=\"btn\" disabled>제품 추가</button><button type=\"button\" class=\"btn\" disabled>가격 재계산</button><span>USD · 2027 MY</span></div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>☐</th><th>제품 / Charge</th><th>수량</th><th>List</th><th>조정</th><th>Net</th><th>Pricing Detail</th></tr></thead>\n      <tbody><tr><td>□</td><td>e-Axle Housing</td><td>420,000</td><td>$42.80</td><td>-7.0%</td><td>$39.80</td><td>3 rules</td></tr><tr><td>□</td><td>Tooling</td><td>1</td><td>$1.80M</td><td>0%</td><td>$1.80M</td><td>Milestone</td></tr><tr><td>□</td><td>NRE</td><td>1</td><td>$240K</td><td>-10%</td><td>$216K</td><td>Approval</td></tr></tbody>\n    </table>\n  </div><div class=\"apn-ui-tle-total\"><span>Quote Total</span><strong>$18.73M</strong><span>Margin 14.2%</span></div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-14\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-tle\">\n    <header><h3>Transaction Line Editor</h3><span class=\"apn-lex-chip\">Quote Q-004821</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-tle-toolbar\"><button type=\"button\" class=\"btn btn-primary\" data-demo-alias>가격 재계산</button><span>USD · 2027 MY</span></div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>☐</th><th>제품 / Charge</th><th>수량</th><th>List</th><th>조정</th><th>Net</th><th>Pricing Detail</th></tr></thead>\n      <tbody><tr><td>□</td><td>e-Axle Housing</td><td>420,000</td><td>$42.80</td><td>-7.0%</td><td>$39.80</td><td>3 rules</td></tr><tr><td>□</td><td>Tooling</td><td>1</td><td>$1.80M</td><td>0%</td><td>$1.80M</td><td>Milestone</td></tr><tr><td>□</td><td>NRE</td><td>1</td><td>$240K</td><td>-10%</td><td>$216K</td><td>Approval</td></tr></tbody>\n    </table>\n  </div><div class=\"apn-ui-tle-total\"><span>Quote Total</span><strong>$18.73M</strong><span>Margin 14.2%</span></div></div>\n  </section></div>",
+    "interaction": {
+      "type": "range",
+      "label": "라인 할인",
+      "min": 0,
+      "max": 12,
+      "value": 7,
+      "step": 1,
+      "unit": "%",
+      "actionLabel": "가격 재계산",
+      "outcomeTemplate": "Pricing Procedure를 실행해 라인 할인 {value}%와 Quote Total을 갱신했습니다.",
+      "selector": ".apn-ui-tle-total span:last-child",
+      "targetTemplate": "할인 {value}% · 승인 확인",
+      "initial": "값을 조정한 뒤 계산을 실행하세요."
+    }
   },
   "SF-15": {
     "recordTitle": "투자·마진·조건 예외 승인",
@@ -5870,7 +6394,18 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=platform.automate_automated_approvals_concepts.htm&language=en_US&type=5",
     "featureKo": "마진·CAPEX·조건 이탈을 승인자·SLA·승인이력과 함께 보여주는 작업목록",
     "badge": "승인 작업목록",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-15\"><div class=\"apn-ui-approval\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Approval Work Queue</h3><span class=\"apn-lex-chip\">6건</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>요청</th><th>예외</th><th>현재 승인자</th><th>SLA</th></tr></thead>\n      <tbody><tr><td>Q-4821 · e-Axle</td><td>Margin -1.8pt</td><td>Finance VP</td><td>4h</td></tr><tr><td>Q-4819 · BMS</td><td>CAPEX $2.4M</td><td>COO</td><td>11h</td></tr><tr><td>Q-4812 · Bracket</td><td>LD clause</td><td>Legal</td><td>1d</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>승인 이력</h3><span class=\"apn-lex-chip\">Flow</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-flow\">\n    <div class=\"apn-ui-flow-node done\"><strong>Sales Director</strong><span>승인 · 09:12</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node active\"><strong>Finance</strong><span>검토 중 · 10:03</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>COO</strong><span>대기</span></div>\n  </div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-15\"><div class=\"apn-ui-approval\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Approval Work Queue</h3><span class=\"apn-lex-chip\">6건</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>요청</th><th>예외</th><th>현재 승인자</th><th>SLA</th></tr></thead>\n      <tbody><tr><td>Q-4821 · e-Axle</td><td>Margin -1.8pt</td><td>Finance VP</td><td>4h</td></tr><tr><td>Q-4819 · BMS</td><td>CAPEX $2.4M</td><td>COO</td><td>11h</td></tr><tr><td>Q-4812 · Bracket</td><td>LD clause</td><td>Legal</td><td>1d</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>승인 이력</h3><span class=\"apn-lex-chip\">Flow</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-flow\">\n    <div class=\"apn-ui-flow-node done\"><strong>Sales Director</strong><span>승인 · 09:12</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node active\"><strong>Finance</strong><span>검토 중 · 10:03</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>COO</strong><span>대기</span></div>\n  </div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "dialog",
+      "label": "승인 검토",
+      "title": "견적 예외 승인",
+      "body": "마진 -1.8pt, CAPEX $2.4M, LD 조항 이탈과 기능별 확약을 검토합니다.",
+      "confirmLabel": "승인",
+      "outcome": "Finance 승인 이력을 기록하고 다음 COO 승인으로 라우팅했습니다.",
+      "selector": ".apn-ui-flow-node.active span",
+      "targetText": "승인 · 방금",
+      "initial": "작업을 열어 필수 조건과 결과를 확인하세요."
+    }
   },
   "SF-16": {
     "recordTitle": "Book of Business · FY26 Q3",
@@ -5903,7 +6438,35 @@ svg {
     "sourceUrl": "https://www.salesforce.com/manufacturing/cloud/sales/",
     "featureKo": "신규 기회·장기 약정·예측을 하나의 Book of Business로 묶은 영업 홈",
     "badge": "Book of Business",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-16\"><div class=\"apn-ui-book\">\n      \n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">신규 기회</span><strong>$128M</strong><span class=\"text-small\">18건</span></div><div><span class=\"text-small text-muted\">계약 사업</span><strong>$342M</strong><span class=\"text-small\">Sales Agreement 24</span></div><div><span class=\"text-small text-muted\">갱신 위험</span><strong>$21M</strong><span class=\"text-small\">90일 이내</span></div>\n  </div>\n      <div class=\"apn-ui-dashboard-grid\">\n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Book of Business</h3><span class=\"apn-lex-chip\">FY26–FY28</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-chart\" viewBox=\"0 0 420 155\" role=\"img\" aria-label=\"신규 기회와 계약 사업 추세\">\n    <title>신규 기회와 계약 사업 추세</title>\n    <line x1=\"30\" y1=\"125\" x2=\"390\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <line x1=\"30\" y1=\"25\" x2=\"30\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <polyline points=\"30,83 102,77 174,70 246,58 318,53 390,44\" class=\"apn-ui-line\"/>\n    <circle cx=\"30\" cy=\"83\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"30\" y=\"145\" text-anchor=\"middle\">Q1</text><circle cx=\"102\" cy=\"77\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"102\" y=\"145\" text-anchor=\"middle\">Q2</text><circle cx=\"174\" cy=\"70\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"174\" y=\"145\" text-anchor=\"middle\">Q3</text><circle cx=\"246\" cy=\"58\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"246\" y=\"145\" text-anchor=\"middle\">Q4</text><circle cx=\"318\" cy=\"53\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"318\" y=\"145\" text-anchor=\"middle\">27H1</text><circle cx=\"390\" cy=\"44\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"390\" y=\"145\" text-anchor=\"middle\">27H2</text>\n  </svg></div>\n  </section>\n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>위험 프로그램</h3><span class=\"apn-lex-chip\">우선순위</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-bar-list\">\n  <div class=\"apn-ui-bar-row\">\n    <span>Volume downside</span><div class=\"apn-lex-bar\"><span style=\"width:72%\"></span></div><strong>$8.4M</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>가격 미회수</span><div class=\"apn-lex-bar\"><span style=\"width:53%\"></span></div><strong>$6.1M</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>EOP 가속</span><div class=\"apn-lex-bar\"><span style=\"width:36%\"></span></div><strong>$4.2M</strong>\n  </div></div></div>\n  </section></div>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-16\"><div class=\"apn-ui-book\">\n      \n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">신규 기회</span><strong>$128M</strong><span class=\"text-small\">18건</span></div><div><span class=\"text-small text-muted\">계약 사업</span><strong>$342M</strong><span class=\"text-small\">Sales Agreement 24</span></div><div><span class=\"text-small text-muted\">갱신 위험</span><strong>$21M</strong><span class=\"text-small\">90일 이내</span></div>\n  </div>\n      <div class=\"apn-ui-dashboard-grid\">\n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Book of Business</h3><span class=\"apn-lex-chip\">FY26–FY28</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-chart\" viewBox=\"0 0 420 155\" role=\"img\" aria-label=\"신규 기회와 계약 사업 추세\">\n    <title>신규 기회와 계약 사업 추세</title>\n    <line x1=\"30\" y1=\"125\" x2=\"390\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <line x1=\"30\" y1=\"25\" x2=\"30\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <polyline points=\"30,83 102,77 174,70 246,58 318,53 390,44\" class=\"apn-ui-line\"/>\n    <circle cx=\"30\" cy=\"83\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"30\" y=\"145\" text-anchor=\"middle\">Q1</text><circle cx=\"102\" cy=\"77\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"102\" y=\"145\" text-anchor=\"middle\">Q2</text><circle cx=\"174\" cy=\"70\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"174\" y=\"145\" text-anchor=\"middle\">Q3</text><circle cx=\"246\" cy=\"58\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"246\" y=\"145\" text-anchor=\"middle\">Q4</text><circle cx=\"318\" cy=\"53\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"318\" y=\"145\" text-anchor=\"middle\">27H1</text><circle cx=\"390\" cy=\"44\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"390\" y=\"145\" text-anchor=\"middle\">27H2</text>\n  </svg></div>\n  </section>\n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>위험 프로그램</h3><span class=\"apn-lex-chip\">우선순위</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-bar-list\">\n  <div class=\"apn-ui-bar-row\">\n    <span>Volume downside</span><div class=\"apn-lex-bar\"><span style=\"width:72%\"></span></div><strong>$8.4M</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>가격 미회수</span><div class=\"apn-lex-bar\"><span style=\"width:53%\"></span></div><strong>$6.1M</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>EOP 가속</span><div class=\"apn-lex-bar\"><span style=\"width:36%\"></span></div><strong>$4.2M</strong>\n  </div></div></div>\n  </section></div>\n    </div></div>",
+    "interaction": {
+      "type": "scenario",
+      "label": "Book of Business 기간",
+      "options": [
+        {
+          "label": "FY26",
+          "result": "FY26 신규 기회와 계약 사업을 표시했습니다.",
+          "metricValue": "$470M",
+          "metricContext": "FY26 Book of Business",
+          "attainment": 94
+        },
+        {
+          "label": "FY27",
+          "result": "FY27 SOP 프로그램과 갱신 위험을 표시했습니다.",
+          "metricValue": "$518M",
+          "metricContext": "FY27 Book of Business",
+          "attainment": 100
+        },
+        {
+          "label": "FY28",
+          "result": "FY28 플랫폼 교체와 EOP 영향을 표시했습니다.",
+          "metricValue": "$492M",
+          "metricContext": "FY28 Book of Business",
+          "attainment": 96
+        }
+      ],
+      "initial": "시나리오를 바꾸면 화면과 KPI가 함께 갱신됩니다."
+    }
   },
   "SF-17": {
     "recordTitle": "2027 MY 수주·상업 기준선",
@@ -5936,7 +6499,18 @@ svg {
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000GX7CUUA1",
     "featureKo": "노미네이션 조건을 견적과 대조하고 프로그램 상업 기준선을 생성하는 화면",
     "badge": "노미네이션",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-17\"><div class=\"apn-ui-nomination\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Nomination vs. Quote</h3><span class=\"apn-lex-chip\">차이 2건</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>조건</th><th>견적 기준선</th><th>노미네이션</th><th>판정</th></tr></thead>\n      <tbody><tr><td>Lifetime volume</td><td>1.84M</td><td>1.72M</td><td><span class=\"apn-lex-chip is-warning\">차이</span></td></tr><tr><td>Piece price</td><td>$39.80</td><td>$39.80</td><td><span class=\"apn-lex-chip is-ok\">일치</span></td></tr><tr><td>Tooling</td><td>$1.80M</td><td>$1.62M</td><td><span class=\"apn-lex-chip is-warning\">차이</span></td></tr><tr><td>SOP</td><td>2027-09</td><td>2027-09</td><td><span class=\"apn-lex-chip is-ok\">일치</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>상업 기준선 생성</h3><span class=\"apn-lex-chip\">Xotigo</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-flow\">\n    <div class=\"apn-ui-flow-node done\"><strong>Nomination</strong><span>LOI 등록</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node active\"><strong>조건 대조</strong><span>2건 검토</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>Sales Agreement</strong><span>초안</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>APQP 인계</strong><span>대기</span></div>\n  </div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-17\"><div class=\"apn-ui-nomination\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Nomination vs. Quote</h3><span class=\"apn-lex-chip\">차이 2건</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>조건</th><th>견적 기준선</th><th>노미네이션</th><th>판정</th></tr></thead>\n      <tbody><tr><td>Lifetime volume</td><td>1.84M</td><td>1.72M</td><td><span class=\"apn-lex-chip is-warning\">차이</span></td></tr><tr><td>Piece price</td><td>$39.80</td><td>$39.80</td><td><span class=\"apn-lex-chip is-ok\">일치</span></td></tr><tr><td>Tooling</td><td>$1.80M</td><td>$1.62M</td><td><span class=\"apn-lex-chip is-warning\">차이</span></td></tr><tr><td>SOP</td><td>2027-09</td><td>2027-09</td><td><span class=\"apn-lex-chip is-ok\">일치</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>상업 기준선 생성</h3><span class=\"apn-lex-chip\">Xotigo</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-flow\">\n    <div class=\"apn-ui-flow-node done\"><strong>Nomination</strong><span>LOI 등록</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node active\"><strong>조건 대조</strong><span>2건 검토</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>Sales Agreement</strong><span>초안</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>APQP 인계</strong><span>대기</span></div>\n  </div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "dialog",
+      "label": "기준선 확정",
+      "title": "Nomination 차이 검토",
+      "body": "Lifetime volume -120K와 Tooling -$180K 차이를 고객 확인 조건으로 승인합니다.",
+      "confirmLabel": "조건부 승인",
+      "outcome": "차이를 이슈로 남기고 Sales Agreement 초안을 생성했습니다.",
+      "selector": ".apn-ui-flow-node.active span",
+      "targetText": "조건부 승인",
+      "initial": "작업을 열어 필수 조건과 결과를 확인하세요."
+    }
   },
   "SF-18": {
     "recordTitle": "글로벌 OEM 장기 수요약정",
@@ -5969,7 +6543,35 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=ind.sa_admin_parent_concept.htm&language=en_US&type=5",
     "featureKo": "제품·가격·계획수량·실적수량·매출을 기간별로 비교하는 장기 약정 레코드",
     "badge": "Sales Agreement",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-18\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-agreement\">\n    <header><h3>Sales Agreement · SA-1084</h3><span class=\"apn-lex-chip\">Active</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">계획 수량</span><strong>1.84M</strong><span class=\"text-small\">Lifetime</span></div><div><span class=\"text-small text-muted\">실적 수량</span><strong>612K</strong><span class=\"text-small\">현재까지</span></div><div><span class=\"text-small text-muted\">Actual Revenue</span><strong>$24.3M</strong><span class=\"text-small\">누계</span></div>\n  </div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>제품</th><th>2026 Q3 계획</th><th>실적</th><th>편차</th><th>2026 Q4 계획</th><th>가격</th></tr></thead>\n      <tbody><tr><td>Housing LH</td><td>124K</td><td>119K</td><td>-4.0%</td><td>138K</td><td>$39.80</td></tr><tr><td>Housing RH</td><td>124K</td><td>121K</td><td>-2.4%</td><td>138K</td><td>$40.10</td></tr><tr><td>Tooling milestone</td><td>1</td><td>1</td><td>0</td><td>—</td><td>$1.8M</td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-18\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-agreement\">\n    <header><h3>Sales Agreement · SA-1084</h3><span class=\"apn-lex-chip\">Active</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">계획 수량</span><strong>1.84M</strong><span class=\"text-small\">Lifetime</span></div><div><span class=\"text-small text-muted\">실적 수량</span><strong>612K</strong><span class=\"text-small\">현재까지</span></div><div><span class=\"text-small text-muted\">Actual Revenue</span><strong>$24.3M</strong><span class=\"text-small\">누계</span></div>\n  </div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>제품</th><th>2026 Q3 계획</th><th>실적</th><th>편차</th><th>2026 Q4 계획</th><th>가격</th></tr></thead>\n      <tbody><tr><td>Housing LH</td><td>124K</td><td>119K</td><td>-4.0%</td><td>138K</td><td>$39.80</td></tr><tr><td>Housing RH</td><td>124K</td><td>121K</td><td>-2.4%</td><td>138K</td><td>$40.10</td></tr><tr><td>Tooling milestone</td><td>1</td><td>1</td><td>0</td><td>—</td><td>$1.8M</td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>",
+    "interaction": {
+      "type": "scenario",
+      "label": "약정 보기",
+      "options": [
+        {
+          "label": "계획 대비 실제",
+          "result": "분기별 계획·실적과 제품별 편차를 표시했습니다.",
+          "metricValue": "91%",
+          "metricContext": "약정 대비 실제",
+          "attainment": 91
+        },
+        {
+          "label": "가격 조건",
+          "result": "유효 가격과 다음 가격조정 일정을 표시했습니다.",
+          "metricValue": "98%",
+          "metricContext": "가격조건 일치율",
+          "attainment": 98
+        },
+        {
+          "label": "갱신 위험",
+          "result": "90일 내 갱신 항목과 미종결 편차를 표시했습니다.",
+          "metricValue": "4건",
+          "metricContext": "갱신 검토 대상",
+          "attainment": 72
+        }
+      ],
+      "initial": "시나리오를 바꾸면 화면과 KPI가 함께 갱신됩니다."
+    }
   },
   "SF-19": {
     "recordTitle": "장기공급계약 의무·갱신",
@@ -6002,7 +6604,15 @@ svg {
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000004e3VUEAY",
     "featureKo": "조항, 의무, 소유자, 마감일, 갱신과 변경을 기회·계정에 연결한 계약 화면",
     "badge": "계약 의무",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-19\"><div class=\"apn-ui-clm\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Agreement Obligations</h3><span class=\"apn-lex-chip\">Docusign CLM</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>의무</th><th>조항</th><th>오너</th><th>마감</th><th>상태</th></tr></thead>\n      <tbody><tr><td>연차 가격인하 반영</td><td>§7.2</td><td>Pricing</td><td>2026-10-01</td><td><span class=\"apn-lex-chip is-warning\">진행 중</span></td></tr><tr><td>금형 소유권 증명</td><td>§12.4</td><td>Program</td><td>2026-08-15</td><td><span class=\"apn-lex-chip\">주의</span></td></tr><tr><td>EOP 부품공급 계획</td><td>§18.1</td><td>SCM</td><td>2027-03-01</td><td><span class=\"apn-lex-chip\">예정</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>계약 타임라인</h3><span class=\"apn-lex-chip\">갱신 184일</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-timeline\"><div class=\"done\"><strong>서명</strong><span>2024-11</span></div><div class=\"done\"><strong>변경 02</strong><span>2025-09</span></div><div class=\"active\"><strong>가격 검토</strong><span>2026-08</span></div><div><strong>갱신</strong><span>2027-01</span></div></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-19\"><div class=\"apn-ui-clm\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Agreement Obligations</h3><span class=\"apn-lex-chip\">Docusign CLM</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>의무</th><th>조항</th><th>오너</th><th>마감</th><th>상태</th></tr></thead>\n      <tbody><tr><td>연차 가격인하 반영</td><td>§7.2</td><td>Pricing</td><td>2026-10-01</td><td><span class=\"apn-lex-chip is-warning\">진행 중</span></td></tr><tr><td>금형 소유권 증명</td><td>§12.4</td><td>Program</td><td>2026-08-15</td><td><span class=\"apn-lex-chip\">주의</span></td></tr><tr><td>EOP 부품공급 계획</td><td>§18.1</td><td>SCM</td><td>2027-03-01</td><td><span class=\"apn-lex-chip\">예정</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>계약 타임라인</h3><span class=\"apn-lex-chip\">갱신 184일</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-timeline\"><div class=\"done\"><strong>서명</strong><span>2024-11</span></div><div class=\"done\"><strong>변경 02</strong><span>2025-09</span></div><div class=\"active\"><strong>가격 검토</strong><span>2026-08</span></div><div><strong>갱신</strong><span>2027-01</span></div></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "advance",
+      "label": "의무 완료",
+      "selector": ".apn-ui-timeline > div",
+      "outcome": "가격 검토 의무를 완료하고 갱신 준비 단계로 이동했습니다.",
+      "doneLabel": "의무 완료",
+      "initial": "현재 단계와 후속 작업을 확인하세요."
+    }
   },
   "SF-20": {
     "recordTitle": "DELFOR·DELJIT / 830·862 관제",
@@ -6035,7 +6645,16 @@ svg {
     "sourceUrl": "https://docs.mulesoft.com/partner-manager/latest/",
     "featureKo": "DELFOR·DELJIT 등 수신 메시지의 파싱·변환·전달·오류 상태를 추적하는 콘솔",
     "badge": "B2B 메시지",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-20\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-message\">\n    <header><h3>B2B Message Tracking</h3><span class=\"apn-lex-chip\">Partner Manager</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-flow\">\n    <div class=\"apn-ui-flow-node done\"><strong>Receive</strong><span>DELFOR D96A</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node done\"><strong>Parse</strong><span>Partner schema</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node done\"><strong>Transform</strong><span>Canonical order</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node active\"><strong>Deliver</strong><span>SAP S/4</span></div>\n  </div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Control No.</th><th>Partner</th><th>Message</th><th>처리시간</th><th>상태</th></tr></thead>\n      <tbody><tr><td>DELFOR-882104</td><td>OEM A</td><td>Forecast</td><td>1.8s</td><td><span class=\"apn-lex-chip is-ok\">Delivered</span></td></tr><tr><td>DELJIT-664211</td><td>OEM B</td><td>JIT Release</td><td>6.4s</td><td><span class=\"apn-lex-chip is-warning\">Retry</span></td></tr><tr><td>APERAK-229880</td><td>OEM C</td><td>Ack</td><td>1.2s</td><td><span class=\"apn-lex-chip is-ok\">Delivered</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-20\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-message\">\n    <header><h3>B2B Message Tracking</h3><span class=\"apn-lex-chip\">Partner Manager</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-flow\">\n    <div class=\"apn-ui-flow-node done\"><strong>Receive</strong><span>DELFOR D96A</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node done\"><strong>Parse</strong><span>Partner schema</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node done\"><strong>Transform</strong><span>Canonical order</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node active\"><strong>Deliver</strong><span>SAP S/4</span></div>\n  </div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Control No.</th><th>Partner</th><th>Message</th><th>처리시간</th><th>상태</th></tr></thead>\n      <tbody><tr><td>DELFOR-882104</td><td>OEM A</td><td>Forecast</td><td>1.8s</td><td><span class=\"apn-lex-chip is-ok\">Delivered</span></td></tr><tr><td>DELJIT-664211</td><td>OEM B</td><td>JIT Release</td><td>6.4s</td><td><span class=\"apn-lex-chip is-warning\">Retry</span></td></tr><tr><td>APERAK-229880</td><td>OEM C</td><td>Ack</td><td>1.2s</td><td><span class=\"apn-lex-chip is-ok\">Delivered</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>",
+    "interaction": {
+      "type": "action",
+      "label": "실패 메시지 재처리",
+      "selector": ".apn-lex-table tbody tr:nth-child(2) td:last-child",
+      "targetText": "Delivered",
+      "outcome": "DELJIT 메시지를 원본 페이로드로 재처리해 SAP S/4에 전달했습니다.",
+      "doneLabel": "Delivered",
+      "initial": "예외를 처리하면 관련 상태가 즉시 갱신됩니다."
+    }
   },
   "SF-21": {
     "recordTitle": "영업·운영·재무 S&OP",
@@ -6068,7 +6687,35 @@ svg {
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FR4Q3UAL",
     "featureKo": "수요·용량·재고·시나리오를 비교하고 병목을 드릴다운하는 S&OP 통제탑",
     "badge": "S&OP 시나리오",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-21\"><div class=\"apn-ui-control-tower\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Scenario Comparison</h3><span class=\"apn-lex-chip\">ketteQ</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>시나리오</th><th>서비스</th><th>재고</th><th>Capacity</th><th>판정</th></tr></thead>\n      <tbody><tr><td>Baseline</td><td>94.1%</td><td>$18.4M</td><td>91%</td><td><span class=\"apn-lex-chip is-ok\">기준</span></td></tr><tr><td>OEM +15%</td><td>87.8%</td><td>$20.2M</td><td>108%</td><td><span class=\"apn-lex-chip is-warning\">제약</span></td></tr><tr><td>Overtime +2</td><td>95.2%</td><td>$19.1M</td><td>99%</td><td><span class=\"apn-lex-chip\">추천</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Capacity Heatmap</h3><span class=\"apn-lex-chip\">12주</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-heatmap\"><span>Line A</span><i class=\"hot\">80%</i><i class=\"\">87%</i><i class=\"\">94%</i><i class=\"\">101%</i><i class=\"\">108%</i><i class=\"warn\">83%</i><i class=\"\">90%</i><i class=\"hot\">97%</i><span>Line B</span><i class=\"\">91%</i><i class=\"\">98%</i><i class=\"\">105%</i><i class=\"warn\">80%</i><i class=\"\">87%</i><i class=\"\">94%</i><i class=\"hot\">101%</i><i class=\"\">108%</i><span>Line C</span><i class=\"\">102%</i><i class=\"warn\">109%</i><i class=\"\">84%</i><i class=\"\">91%</i><i class=\"\">98%</i><i class=\"hot\">105%</i><i class=\"warn\">80%</i><i class=\"\">87%</i><span>Supplier K</span><i class=\"\">81%</i><i class=\"\">88%</i><i class=\"\">95%</i><i class=\"\">102%</i><i class=\"hot\">109%</i><i class=\"\">84%</i><i class=\"\">91%</i><i class=\"\">98%</i></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-21\"><div class=\"apn-ui-control-tower\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Scenario Comparison</h3><span class=\"apn-lex-chip\">ketteQ</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>시나리오</th><th>서비스</th><th>재고</th><th>Capacity</th><th>판정</th></tr></thead>\n      <tbody><tr><td>Baseline</td><td>94.1%</td><td>$18.4M</td><td>91%</td><td><span class=\"apn-lex-chip is-ok\">기준</span></td></tr><tr><td>OEM +15%</td><td>87.8%</td><td>$20.2M</td><td>108%</td><td><span class=\"apn-lex-chip is-warning\">제약</span></td></tr><tr><td>Overtime +2</td><td>95.2%</td><td>$19.1M</td><td>99%</td><td><span class=\"apn-lex-chip\">추천</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Capacity Heatmap</h3><span class=\"apn-lex-chip\">12주</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-heatmap\"><span>Line A</span><i class=\"hot\">80%</i><i class=\"\">87%</i><i class=\"\">94%</i><i class=\"\">101%</i><i class=\"\">108%</i><i class=\"warn\">83%</i><i class=\"\">90%</i><i class=\"hot\">97%</i><span>Line B</span><i class=\"\">91%</i><i class=\"\">98%</i><i class=\"\">105%</i><i class=\"warn\">80%</i><i class=\"\">87%</i><i class=\"\">94%</i><i class=\"hot\">101%</i><i class=\"\">108%</i><span>Line C</span><i class=\"\">102%</i><i class=\"warn\">109%</i><i class=\"\">84%</i><i class=\"\">91%</i><i class=\"\">98%</i><i class=\"hot\">105%</i><i class=\"warn\">80%</i><i class=\"\">87%</i><span>Supplier K</span><i class=\"\">81%</i><i class=\"\">88%</i><i class=\"\">95%</i><i class=\"\">102%</i><i class=\"hot\">109%</i><i class=\"\">84%</i><i class=\"\">91%</i><i class=\"\">98%</i></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "scenario",
+      "label": "S&OP 시나리오",
+      "options": [
+        {
+          "label": "Baseline",
+          "result": "현재 서비스·재고·Capacity 기준을 유지했습니다.",
+          "metricValue": "94.1%",
+          "metricContext": "예상 서비스 수준",
+          "attainment": 94
+        },
+        {
+          "label": "OEM +15%",
+          "result": "수요 상향 시 Capacity 108% 병목을 표시했습니다.",
+          "metricValue": "87.8%",
+          "metricContext": "제약 서비스 수준",
+          "attainment": 88
+        },
+        {
+          "label": "Overtime +2",
+          "result": "추가 교대로 서비스 95.2%와 Capacity 99%를 확보했습니다.",
+          "metricValue": "95.2%",
+          "metricContext": "추천 서비스 수준",
+          "attainment": 95
+        }
+      ],
+      "initial": "시나리오를 바꾸면 화면과 KPI가 함께 갱신됩니다."
+    }
   },
   "SF-22": {
     "recordTitle": "연동가·연차 가격인하 적용",
@@ -6101,7 +6748,21 @@ svg {
     "sourceUrl": "https://developer.salesforce.com/docs/platform/data-models/guide/salesforce-pricing.html",
     "featureKo": "원자재 지수·연차 인하·유효기간·조정단계를 가격 워터폴로 검증하는 화면",
     "badge": "가격 조정",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-22\"><div class=\"apn-ui-pricing\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Price Adjustment Schedule</h3><span class=\"apn-lex-chip\">2027 MY</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>조정</th><th>기준</th><th>주기</th><th>적용일</th><th>상태</th></tr></thead>\n      <tbody><tr><td>Annual price-down</td><td>-2.0%</td><td>연 1회</td><td>2027-01-01</td><td><span class=\"apn-lex-chip is-ok\">승인</span></td></tr><tr><td>Aluminium index</td><td>LME 3M avg.</td><td>분기</td><td>2026-10-01</td><td><span class=\"apn-lex-chip\">계산 중</span></td></tr><tr><td>ECR recovery</td><td>+$0.84</td><td>일회성</td><td>2026-09-15</td><td><span class=\"apn-lex-chip is-warning\">승인 대기</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Price Waterfall</h3><span class=\"apn-lex-chip\">Pricing Procedure</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-waterfall wide\"><div style=\"height:82%\"><span>Base</span><strong>42.80</strong></div><div class=\"negative\" style=\"height:30%\"><span>APD</span><strong>-0.86</strong></div><div style=\"height:38%\"><span>Index</span><strong>+0.42</strong></div><div style=\"height:25%\"><span>ECR</span><strong>+0.84</strong></div><div class=\"total\" style=\"height:86%\"><span>Net</span><strong>43.20</strong></div></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-22\"><div class=\"apn-ui-pricing\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Price Adjustment Schedule</h3><span class=\"apn-lex-chip\">2027 MY</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>조정</th><th>기준</th><th>주기</th><th>적용일</th><th>상태</th></tr></thead>\n      <tbody><tr><td>Annual price-down</td><td>-2.0%</td><td>연 1회</td><td>2027-01-01</td><td><span class=\"apn-lex-chip is-ok\">승인</span></td></tr><tr><td>Aluminium index</td><td>LME 3M avg.</td><td>분기</td><td>2026-10-01</td><td><span class=\"apn-lex-chip\">계산 중</span></td></tr><tr><td>ECR recovery</td><td>+$0.84</td><td>일회성</td><td>2026-09-15</td><td><span class=\"apn-lex-chip is-warning\">승인 대기</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Price Waterfall</h3><span class=\"apn-lex-chip\">Pricing Procedure</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-waterfall wide\"><div style=\"height:82%\"><span>Base</span><strong>42.80</strong></div><div class=\"negative\" style=\"height:30%\"><span>APD</span><strong>-0.86</strong></div><div style=\"height:38%\"><span>Index</span><strong>+0.42</strong></div><div style=\"height:25%\"><span>ECR</span><strong>+0.84</strong></div><div class=\"total\" style=\"height:86%\"><span>Net</span><strong>43.20</strong></div></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "range",
+      "label": "Aluminium index",
+      "min": -5,
+      "max": 10,
+      "value": 3,
+      "step": 1,
+      "unit": "%",
+      "actionLabel": "가격 절차 실행",
+      "outcomeTemplate": "Pricing Procedure가 지수 {value}%를 적용해 Net Price를 다시 계산했습니다.",
+      "selector": ".apn-ui-pricing .apn-ui-panel:nth-child(2) header .apn-lex-chip",
+      "targetTemplate": "지수 {value}% 적용",
+      "initial": "값을 조정한 뒤 계산을 실행하세요."
+    }
   },
   "SF-23": {
     "recordTitle": "RFQ–APQP–SOP–EOP 생애주기",
@@ -6129,12 +6790,20 @@ svg {
     "id": "SF-23",
     "screenKey": "apqp-gate",
     "product": "Propel PLM/QMS · AppExchange",
-    "surface": "Program Milestones · APQP",
+    "surface": "Program Lifecycle Record · 구성 예시",
     "sourceLabel": "Propel PLM, QMS & PIM",
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3000000DpZt6EAF",
-    "featureKo": "RFQ부터 PPAP·SOP·EOP까지 산출물, 오너와 게이트 상태를 추적하는 프로그램 보드",
-    "badge": "APQP 게이트",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-23\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-gates\">\n    <header><h3>Program Milestones · APQP</h3><span class=\"apn-lex-chip\">Propel</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-gates\"><div class=\"done\"><span>RFQ</span><strong>완료</strong></div><div class=\"done\"><span>Nomination</span><strong>완료</strong></div><div class=\"active\"><span>DV/PV</span><strong>진행 68%</strong></div><div class=\"\"><span>PPAP</span><strong>예정</strong></div><div class=\"\"><span>SOP</span><strong>2027-09</strong></div></div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Deliverable</th><th>Owner</th><th>Due</th><th>상태</th></tr></thead>\n      <tbody><tr><td>Design FMEA</td><td>Engineering</td><td>08-14</td><td><span class=\"apn-lex-chip is-ok\">승인</span></td></tr><tr><td>Process Flow</td><td>Manufacturing</td><td>08-22</td><td><span class=\"apn-lex-chip\">검토 중</span></td></tr><tr><td>Control Plan</td><td>Quality</td><td>09-01</td><td><span class=\"apn-lex-chip is-warning\">지연 위험</span></td></tr><tr><td>PPAP PSW</td><td>Quality</td><td>11-18</td><td><span class=\"apn-lex-chip\">예정</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>"
+    "featureKo": "Propel 생애주기 레코드에 APQP 게이트를 구성한 예시이며 실제 APQP·PPAP 깊이는 검증 필요",
+    "badge": "프로그램 게이트",
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-23\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-gates\">\n    <header><h3>Program Lifecycle Gate · 구성</h3><span class=\"apn-lex-chip\">Propel · 검증 필요</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-gates\"><div class=\"done\"><span>RFQ</span><strong>완료</strong></div><div class=\"done\"><span>Nomination</span><strong>완료</strong></div><div class=\"active\"><span>DV/PV</span><strong>진행 68%</strong></div><div class=\"\"><span>PPAP</span><strong>예정</strong></div><div class=\"\"><span>SOP</span><strong>2027-09</strong></div></div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Deliverable</th><th>Owner</th><th>Due</th><th>상태</th></tr></thead>\n      <tbody><tr><td>Design FMEA</td><td>Engineering</td><td>08-14</td><td><span class=\"apn-lex-chip is-ok\">승인</span></td></tr><tr><td>Process Flow</td><td>Manufacturing</td><td>08-22</td><td><span class=\"apn-lex-chip\">검토 중</span></td></tr><tr><td>Control Plan</td><td>Quality</td><td>09-01</td><td><span class=\"apn-lex-chip is-warning\">지연 위험</span></td></tr><tr><td>PPAP PSW</td><td>Quality</td><td>11-18</td><td><span class=\"apn-lex-chip\">예정</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>",
+    "interaction": {
+      "type": "advance",
+      "label": "게이트 진행",
+      "selector": ".apn-ui-gates > div",
+      "outcome": "DV/PV 산출물을 승인하고 PPAP 준비 게이트로 이동했습니다.",
+      "doneLabel": "PPAP 준비",
+      "initial": "현재 단계와 후속 작업을 확인하세요."
+    }
   },
   "SF-24": {
     "recordTitle": "판매 가능 부품·어셈블리 카탈로그",
@@ -6167,7 +6836,31 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=sf.product_catalog_introduction.htm&language=en_US&type=5",
     "featureKo": "카탈로그·카테고리·동적 속성으로 판매 가능한 부품과 번들을 탐색하는 화면",
     "badge": "제품 탐색",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-24\"><div class=\"apn-ui-catalog\">\n      <aside><strong>Catalog</strong><span class=\"active\">EV Components</span><span>Thermal Systems</span><span>Chassis</span><span>Service Parts</span><strong>Dynamic Attributes</strong><span>Voltage: 800V</span><span>Plant: EU</span><span>SOP ≤ 2028</span></aside>\n      <div><div class=\"apn-ui-searchbox\">제품·속성 검색: 800V housing</div><div class=\"apn-ui-product-grid\"><div><span class=\"apn-ui-product-thumb\">▦</span><strong>e-Axle Housing</strong><span>EH-800-42</span><span>Aluminium · EU</span><button type=\"button\" class=\"btn\" disabled>선택</button></div><div><span class=\"apn-ui-product-thumb\">▦</span><strong>Inverter Case</strong><span>INV-800-18</span><span>IP67 · Korea</span><button type=\"button\" class=\"btn\" disabled>선택</button></div><div><span class=\"apn-ui-product-thumb\">▦</span><strong>BMS Enclosure</strong><span>BMS-96-04</span><span>96 cell · Mexico</span><button type=\"button\" class=\"btn\" disabled>선택</button></div><div><span class=\"apn-ui-product-thumb\">▦</span><strong>Cooling Plate</strong><span>TMS-COOL-7</span><span>7 channel · EU</span><button type=\"button\" class=\"btn\" disabled>선택</button></div></div></div>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-24\"><div class=\"apn-ui-catalog\">\n      <aside><strong>Catalog</strong><span class=\"active\">EV Components</span><span>Thermal Systems</span><span>Chassis</span><span>Service Parts</span><strong>Dynamic Attributes</strong><span>Voltage: 800V</span><span>Plant: EU</span><span>SOP ≤ 2028</span></aside>\n      <div><div class=\"apn-ui-searchbox\">제품·속성 검색: 800V housing</div><div class=\"apn-ui-product-grid\"><div><span class=\"apn-ui-product-thumb\">▦</span><strong>e-Axle Housing</strong><span>EH-800-42</span><span>Aluminium · EU</span><button type=\"button\" class=\"btn\" data-demo-option=\"0\">선택</button></div><div><span class=\"apn-ui-product-thumb\">▦</span><strong>Inverter Case</strong><span>INV-800-18</span><span>IP67 · Korea</span><button type=\"button\" class=\"btn\" data-demo-option=\"1\">선택</button></div><div><span class=\"apn-ui-product-thumb\">▦</span><strong>BMS Enclosure</strong><span>BMS-96-04</span><span>96 cell · Mexico</span><button type=\"button\" class=\"btn\" data-demo-option=\"2\">선택</button></div><div><span class=\"apn-ui-product-thumb\">▦</span><strong>Cooling Plate</strong><span>TMS-COOL-7</span><span>7 channel · EU</span><button type=\"button\" class=\"btn\" data-demo-option=\"3\">선택</button></div></div></div>\n    </div></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "제품 필터",
+      "selector": ".apn-ui-product-grid > div",
+      "options": [
+        {
+          "label": "800V Housing",
+          "result": "800V·EU·SOP 2028 조건에 맞는 e-Axle Housing을 선택했습니다."
+        },
+        {
+          "label": "Inverter Case",
+          "result": "IP67·Korea 조건의 Inverter Case를 선택했습니다."
+        },
+        {
+          "label": "BMS Enclosure",
+          "result": "96 cell·Mexico 조건의 BMS Enclosure를 선택했습니다."
+        },
+        {
+          "label": "Cooling Plate",
+          "result": "7 channel·EU 조건의 Cooling Plate를 선택했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-25": {
     "recordTitle": "DFM/DFA 상업 영향평가",
@@ -6200,7 +6893,18 @@ svg {
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3000000DpZt6EAF",
     "featureKo": "설계변경의 BOM·금형·단가·일정 영향과 재견적 여부를 한 레코드에서 승인",
     "badge": "설계 변경",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-25\"><div class=\"apn-ui-eco\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Engineering Change Order · ECO-318</h3><span class=\"apn-lex-chip\">Propel</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-diff\"><div><span>Before · Rev B</span><strong>Wall 4.2 mm</strong><strong>Cycle 52 sec</strong><strong>Price $39.80</strong></div><div><span>After · Rev C</span><strong>Wall 3.8 mm</strong><strong>Cycle 47 sec</strong><strong>Price $39.24</strong></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Commercial Impact</h3><span class=\"apn-lex-chip\">재견적 필요</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>영향</th><th>값</th><th>Owner</th><th>결정</th></tr></thead>\n      <tbody><tr><td>Material</td><td>-$0.44/pc</td><td>Costing</td><td>반영</td></tr><tr><td>Tool modification</td><td>$86K</td><td>Program</td><td>고객 회수</td></tr><tr><td>SOP timing</td><td>+2 weeks</td><td>Sales</td><td>통지</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-25\"><div class=\"apn-ui-eco\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Engineering Change Order · ECO-318</h3><span class=\"apn-lex-chip\">Propel</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-diff\"><div><span>Before · Rev B</span><strong>Wall 4.2 mm</strong><strong>Cycle 52 sec</strong><strong>Price $39.80</strong></div><div><span>After · Rev C</span><strong>Wall 3.8 mm</strong><strong>Cycle 47 sec</strong><strong>Price $39.24</strong></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Commercial Impact</h3><span class=\"apn-lex-chip\">재견적 필요</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>영향</th><th>값</th><th>Owner</th><th>결정</th></tr></thead>\n      <tbody><tr><td>Material</td><td>-$0.44/pc</td><td>Costing</td><td>반영</td></tr><tr><td>Tool modification</td><td>$86K</td><td>Program</td><td>고객 회수</td></tr><tr><td>SOP timing</td><td>+2 weeks</td><td>Sales</td><td>통지</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "dialog",
+      "label": "ECO 승인",
+      "title": "Engineering Change Order",
+      "body": "Rev C 변경이 재료비 -$0.44/pc, 금형 $86K, SOP +2주에 미치는 영향을 검토합니다.",
+      "confirmLabel": "승인·재견적",
+      "outcome": "ECO를 승인하고 관련 Opportunity에 재견적 태스크를 생성했습니다.",
+      "selector": ".apn-ui-diff > div:last-child span",
+      "targetText": "After · Rev C · Approved",
+      "initial": "작업을 열어 필수 조건과 결과를 확인하세요."
+    }
   },
   "SF-26": {
     "recordTitle": "고객 오더·생산확정 가시성",
@@ -6233,7 +6937,27 @@ svg {
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000005uSuCEAU",
     "featureKo": "고객오더·작업오더·가용량·출하상태를 CRM 계정 맥락으로 노출하는 주문 화면",
     "badge": "오더 상태",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-26\"><div class=\"apn-ui-order\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Sales Order · SO-88412</h3><span class=\"apn-lex-chip\">Rootstock</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">Ordered</span><strong>42,000</strong><span class=\"text-small\">pcs</span></div><div><span class=\"text-small text-muted\">Available</span><strong>39,600</strong><span class=\"text-small\">94.3%</span></div><div><span class=\"text-small text-muted\">Shipped</span><strong>31,200</strong><span class=\"text-small\">3 ASN</span></div>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Manufacturing Status</h3><span class=\"apn-lex-chip\">상업 가시성</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-order-lines\"><div><strong>WO-24118</strong><span>Line A · 18,400</span><span class=\"apn-lex-chip is-ok\">Complete</span></div><div><strong>WO-24122</strong><span>Line B · 12,800</span><span class=\"apn-lex-chip\">Running</span></div><div><strong>WO-24131</strong><span>Line C · 8,400</span><span class=\"apn-lex-chip is-warning\">Material hold</span></div></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-26\"><div class=\"apn-ui-order\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Sales Order · SO-88412</h3><span class=\"apn-lex-chip\">Rootstock</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">Ordered</span><strong>42,000</strong><span class=\"text-small\">pcs</span></div><div><span class=\"text-small text-muted\">Available</span><strong>39,600</strong><span class=\"text-small\">94.3%</span></div><div><span class=\"text-small text-muted\">Shipped</span><strong>31,200</strong><span class=\"text-small\">3 ASN</span></div>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Manufacturing Status</h3><span class=\"apn-lex-chip\">상업 가시성</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-order-lines\"><div><strong>WO-24118</strong><span>Line A · 18,400</span><span class=\"apn-lex-chip is-ok\">Complete</span></div><div><strong>WO-24122</strong><span>Line B · 12,800</span><span class=\"apn-lex-chip\">Running</span></div><div><strong>WO-24131</strong><span>Line C · 8,400</span><span class=\"apn-lex-chip is-warning\">Material hold</span></div></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "작업오더",
+      "selector": ".apn-ui-order-lines > div",
+      "options": [
+        {
+          "label": "WO-24118",
+          "result": "완료 수량 18,400개와 연결 출하를 표시했습니다."
+        },
+        {
+          "label": "WO-24122",
+          "result": "Line B 진행 수량 12,800개와 예상 완료를 표시했습니다."
+        },
+        {
+          "label": "WO-24131",
+          "result": "자재 Hold가 고객 약속에 미치는 영향을 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-27": {
     "recordTitle": "출하·ASN·POD 납기 관제",
@@ -6261,12 +6985,21 @@ svg {
     "id": "SF-27",
     "screenKey": "shipment-exception",
     "product": "Service Cloud + MuleSoft",
-    "surface": "Shipment Exception Console",
+    "surface": "Shipment Exception Case · 통합 구성",
     "sourceLabel": "MuleSoft Partner Manager Architecture",
     "sourceUrl": "https://docs.mulesoft.com/partner-manager/latest/partner-manager-architecture",
-    "featureKo": "ASN·운송사·POD·도착예정과 고객 영향도를 예외 Case로 조정하는 콘솔",
+    "featureKo": "TMS·EDI의 ASN·POD·ETA를 MuleSoft로 연결해 Service Console의 예외 Case로 조정",
     "badge": "물류 예외",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-27\"><div class=\"apn-ui-shipment\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Shipment Exception Map</h3><span class=\"apn-lex-chip\">Service Console</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-map\" viewBox=\"0 0 520 230\" role=\"img\" aria-label=\"출하경로와 예외 위치\"><title>출하경로와 예외</title><path d=\"M55 175 C140 40 260 200 465 62\" class=\"apn-ui-route\"/><circle cx=\"55\" cy=\"175\" r=\"9\"/><circle cx=\"246\" cy=\"135\" r=\"12\" class=\"warn\"/><circle cx=\"465\" cy=\"62\" r=\"9\"/><text x=\"42\" y=\"204\">Supplier</text><text x=\"215\" y=\"165\">지연 +95분</text><text x=\"440\" y=\"42\">OEM Plant</text></svg></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Exception Case · LOG-2208</h3><span class=\"apn-lex-chip\">ETA 16:40</span></header>\n    <div class=\"apn-lex-section-body\"><dl class=\"apn-ui-fields\"><div><dt>ASN</dt><dd>ASN-77102</dd></div><div><dt>Carrier</dt><dd>K-Line</dd></div><div><dt>원인</dt><dd>국경 통관 지연</dd></div><div><dt>고객 영향</dt><dd>Line-side 2.3h buffer</dd></div></dl></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-27\"><div class=\"apn-ui-shipment\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Shipment Exception Map · 통합</h3><span class=\"apn-lex-chip\">TMS · MuleSoft</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-map\" viewBox=\"0 0 520 230\" role=\"img\" aria-label=\"출하경로와 예외 위치\"><title>출하경로와 예외</title><path d=\"M55 175 C140 40 260 200 465 62\" class=\"apn-ui-route\"/><circle cx=\"55\" cy=\"175\" r=\"9\"/><circle cx=\"246\" cy=\"135\" r=\"12\" class=\"warn\"/><circle cx=\"465\" cy=\"62\" r=\"9\"/><text x=\"42\" y=\"204\">Supplier</text><text x=\"215\" y=\"165\">지연 +95분</text><text x=\"440\" y=\"42\">OEM Plant</text></svg></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Exception Case · LOG-2208</h3><span class=\"apn-lex-chip\">ETA 16:40</span></header>\n    <div class=\"apn-lex-section-body\"><dl class=\"apn-ui-fields\"><div><dt>ASN</dt><dd>ASN-77102</dd></div><div><dt>Carrier</dt><dd>K-Line</dd></div><div><dt>원인</dt><dd>국경 통관 지연</dd></div><div><dt>고객 영향</dt><dd>Line-side 2.3h buffer</dd></div></dl></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "action",
+      "label": "물류 예외 종결",
+      "selector": ".apn-ui-shipment .apn-ui-panel:nth-child(2) header .apn-lex-chip",
+      "targetText": "Resolved",
+      "outcome": "대체 경로와 고객 통지를 기록하고 Shipment Exception Case를 종결했습니다.",
+      "doneLabel": "종결",
+      "initial": "예외를 처리하면 관련 상태가 즉시 갱신됩니다."
+    }
   },
   "SF-28": {
     "recordTitle": "출하–Lot–생산·검사 계보",
@@ -6294,12 +7027,36 @@ svg {
     "id": "SF-28",
     "screenKey": "lot-genealogy",
     "product": "ComplianceQuest / Rootstock",
-    "surface": "Lot Genealogy",
+    "surface": "Lot Traceability View · 통합 구성",
     "sourceLabel": "ComplianceQuest EQMS",
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3000000B5PNxEAN",
-    "featureKo": "출하 Lot에서 하위 부품·공정·검사·영향 고객으로 양방향 추적하는 계보 화면",
-    "badge": "Lot 계보",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-28\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-genealogy\">\n    <header><h3>Lot Genealogy</h3><span class=\"apn-lex-chip\">양방향 추적</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-genealogy\"><div class=\"level\"><span>원자재</span><div>AL-240611-08</div><div>Insert-9931</div></div><span>→</span><div class=\"level\"><span>공정</span><div>Heat T08</div><div>CNC C14</div></div><span>→</span><div class=\"level active\"><span>완제품 Lot</span><div>EH-260724-A</div></div><span>→</span><div class=\"level\"><span>출하·고객</span><div>ASN-77102</div><div>OEM Plant 3</div></div></div><div class=\"apn-ui-genealogy-actions\"><span class=\"apn-lex-chip is-warning\">영향 수량 4,280 pcs</span><span class=\"apn-lex-chip\">검사기록 18</span><span class=\"apn-lex-chip\">연결 Case 2</span></div></div>\n  </section></div>"
+    "featureKo": "MES·ERP·QMS의 Lot 계보를 고객 Case에서 조회하는 구성으로 원장 자체는 외부 시스템이 담당",
+    "badge": "Lot 추적",
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-28\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-genealogy\">\n    <header><h3>Lot Traceability · 통합 조회</h3><span class=\"apn-lex-chip\">MES · ERP · QMS</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-genealogy\"><div class=\"level\"><span>원자재</span><div>AL-240611-08</div><div>Insert-9931</div></div><span>→</span><div class=\"level\"><span>공정</span><div>Heat T08</div><div>CNC C14</div></div><span>→</span><div class=\"level active\"><span>완제품 Lot</span><div>EH-260724-A</div></div><span>→</span><div class=\"level\"><span>출하·고객</span><div>ASN-77102</div><div>OEM Plant 3</div></div></div><div class=\"apn-ui-genealogy-actions\"><span class=\"apn-lex-chip is-warning\">영향 수량 4,280 pcs</span><span class=\"apn-lex-chip\">검사기록 18</span><span class=\"apn-lex-chip\">연결 Case 2</span></div></div>\n  </section></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "계보 단계",
+      "selector": ".apn-ui-genealogy .level",
+      "options": [
+        {
+          "label": "원자재",
+          "result": "원자재 Lot와 공급업체 검사증거를 표시했습니다."
+        },
+        {
+          "label": "공정",
+          "result": "Heat·CNC 공정과 검사결과를 표시했습니다."
+        },
+        {
+          "label": "완제품 Lot",
+          "result": "영향 완제품 Lot 4,280개를 표시했습니다."
+        },
+        {
+          "label": "출하·고객",
+          "result": "연결 ASN과 OEM Plant 3 영향을 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-29": {
     "recordTitle": "감속기 이음 필드 클레임",
@@ -6326,13 +7083,21 @@ svg {
     ],
     "id": "SF-29",
     "screenKey": "case-milestones",
-    "product": "Service Cloud",
+    "product": "Service Cloud + ComplianceQuest",
     "surface": "Case · Entitlement Milestones",
     "sourceLabel": "Entitlements and Milestones",
-    "sourceUrl": "https://help.salesforce.com/s/articleView?id=sf.entitlements_parent_admin.htm&language=en_US&type=5",
-    "featureKo": "OEM 불만 Case, SLA 마일스톤, 8D 단계와 CAPA 링크를 한 콘솔에서 관리",
+    "sourceUrl": "https://help.salesforce.com/s/articleView?id=service.entitlements_parent_admin.htm&language=en_US&type=5",
+    "featureKo": "Case SLA는 Entitlement·Milestone으로 관리하고 8D·CAPA는 QMS 레코드에 연결",
     "badge": "Case·SLA",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-29\"><div class=\"apn-ui-case-console\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Case · OEM Complaint C-3188</h3><span class=\"apn-lex-chip\">P1</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-milestones\"><div class=\"done\"><strong>초기회신</strong><span>0:38 / 1h</span></div><div class=\"active\"><strong>봉쇄조치</strong><span>5:12 / 8h</span></div><div><strong>원인분석</strong><span>Due 08-02</span></div><div><strong>8D 종결</strong><span>Due 08-18</span></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>8D / CAPA 연결</h3><span class=\"apn-lex-chip\">Entitlement</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>단계</th><th>Owner</th><th>상태</th></tr></thead>\n      <tbody><tr><td>D1 Team</td><td>Quality</td><td>완료</td></tr><tr><td>D2 Problem</td><td>Customer Quality</td><td>완료</td></tr><tr><td>D3 Containment</td><td>Plant</td><td>진행 중</td></tr><tr><td>D4 Root Cause</td><td>Engineering</td><td>대기</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-29\"><div class=\"apn-ui-case-console\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Case · OEM Complaint C-3188</h3><span class=\"apn-lex-chip\">P1</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-milestones\"><div class=\"done\"><strong>초기회신</strong><span>0:38 / 1h</span></div><div class=\"active\"><strong>봉쇄조치</strong><span>5:12 / 8h</span></div><div><strong>원인분석</strong><span>Due 08-02</span></div><div><strong>8D 종결</strong><span>Due 08-18</span></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>8D / CAPA 연결</h3><span class=\"apn-lex-chip\">ComplianceQuest</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>단계</th><th>Owner</th><th>상태</th></tr></thead>\n      <tbody><tr><td>D1 Team</td><td>Quality</td><td>완료</td></tr><tr><td>D2 Problem</td><td>Customer Quality</td><td>완료</td></tr><tr><td>D3 Containment</td><td>Plant</td><td>진행 중</td></tr><tr><td>D4 Root Cause</td><td>Engineering</td><td>대기</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "advance",
+      "label": "8D 단계 진행",
+      "selector": ".apn-ui-milestones > div",
+      "outcome": "봉쇄조치를 완료하고 원인분석 마일스톤을 시작했습니다.",
+      "doneLabel": "원인분석 시작",
+      "initial": "현재 단계와 후속 작업을 확인하세요."
+    }
   },
   "SF-30": {
     "recordTitle": "주요 OEM 만족·운영 성과",
@@ -6365,7 +7130,31 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=xcloud.concept_salesforce_surveys.htm&language=en_US&type=5",
     "featureKo": "OEM 평가항목별 점수, 응답, 추세와 개선조치를 계정 레코드에 연결",
     "badge": "고객 피드백",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-30\"><div class=\"apn-ui-survey\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>OEM Supplier Scorecard</h3><span class=\"apn-lex-chip\">Feedback Management</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-radial\"><div><strong>82</strong><span>관계 건강도</span></div></div><div class=\"apn-ui-bar-list\">\n  <div class=\"apn-ui-bar-row\">\n    <span>품질</span><div class=\"apn-lex-bar\"><span style=\"width:88%\"></span></div><strong>88</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>납기</span><div class=\"apn-lex-bar\"><span style=\"width:76%\"></span></div><strong>76</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>기술대응</span><div class=\"apn-lex-bar\"><span style=\"width:91%\"></span></div><strong>91</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>상업협업</span><div class=\"apn-lex-bar\"><span style=\"width:73%\"></span></div><strong>73</strong>\n  </div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>응답·조치</h3><span class=\"apn-lex-chip\">24 responses</span></header>\n    <div class=\"apn-lex-section-body\"><blockquote>“ECR 회신 속도는 개선됐으나 가격변경 추적이 더 필요합니다.”</blockquote><div class=\"apn-ui-action-list\"><li>가격변경 조치계획 생성</li><li>KAM 경영검토 배정</li><li>다음 설문 90일 후</li></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-30\"><div class=\"apn-ui-survey\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>OEM Supplier Scorecard</h3><span class=\"apn-lex-chip\">Feedback Management</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-radial\"><div><strong>82</strong><span>관계 건강도</span></div></div><div class=\"apn-ui-bar-list\">\n  <div class=\"apn-ui-bar-row\">\n    <span>품질</span><div class=\"apn-lex-bar\"><span style=\"width:88%\"></span></div><strong>88</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>납기</span><div class=\"apn-lex-bar\"><span style=\"width:76%\"></span></div><strong>76</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>기술대응</span><div class=\"apn-lex-bar\"><span style=\"width:91%\"></span></div><strong>91</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>상업협업</span><div class=\"apn-lex-bar\"><span style=\"width:73%\"></span></div><strong>73</strong>\n  </div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>응답·조치</h3><span class=\"apn-lex-chip\">24 responses</span></header>\n    <div class=\"apn-lex-section-body\"><blockquote>“ECR 회신 속도는 개선됐으나 가격변경 추적이 더 필요합니다.”</blockquote><div class=\"apn-ui-action-list\"><li>가격변경 조치계획 생성</li><li>KAM 경영검토 배정</li><li>다음 설문 90일 후</li></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "Scorecard 항목",
+      "selector": ".apn-ui-bar-row",
+      "options": [
+        {
+          "label": "품질",
+          "result": "품질 88점과 관련 불만·CAPA를 표시했습니다."
+        },
+        {
+          "label": "납기",
+          "result": "납기 76점과 물류 예외·프리미엄 운송을 표시했습니다."
+        },
+        {
+          "label": "기술대응",
+          "result": "기술대응 91점과 현장지원 이력을 표시했습니다."
+        },
+        {
+          "label": "상업협업",
+          "result": "상업협업 73점과 가격변경 조치를 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-31": {
     "recordTitle": "구동계 보증·Supplier Recovery",
@@ -6398,7 +7187,18 @@ svg {
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvJyEAI",
     "featureKo": "보증클레임 검증, 책임분담, 지급, 공급업체 회수와 품질 피드백을 폐쇄 루프로 처리",
     "badge": "보증 판정",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-31\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-warranty\">\n    <header><h3>Warranty Claim Adjudication</h3><span class=\"apn-lex-chip\">Tavant</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-flow\">\n    <div class=\"apn-ui-flow-node done\"><strong>Claim Intake</strong><span>VIN·DTC 확인</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node done\"><strong>Validation</strong><span>정책·기간</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node active\"><strong>Adjudication</strong><span>책임 70/30</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>Payment</strong><span>$1,240</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>Supplier Recovery</strong><span>$868</span></div>\n  </div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Cost element</th><th>Claimed</th><th>Approved</th><th>Recoverable</th></tr></thead>\n      <tbody><tr><td>Part</td><td>$620</td><td>$620</td><td>$434</td></tr><tr><td>Labor</td><td>$480</td><td>$360</td><td>$252</td></tr><tr><td>Logistics</td><td>$220</td><td>$140</td><td>$98</td></tr><tr><td>Admin</td><td>$120</td><td>$120</td><td>$84</td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-31\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-warranty\">\n    <header><h3>Warranty Claim Adjudication</h3><span class=\"apn-lex-chip\">Tavant</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-flow\">\n    <div class=\"apn-ui-flow-node done\"><strong>Claim Intake</strong><span>VIN·DTC 확인</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node done\"><strong>Validation</strong><span>정책·기간</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node active\"><strong>Adjudication</strong><span>책임 70/30</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>Payment</strong><span>$1,240</span></div><span class=\"apn-ui-flow-arrow\" aria-hidden=\"true\">→</span><div class=\"apn-ui-flow-node \"><strong>Supplier Recovery</strong><span>$868</span></div>\n  </div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Cost element</th><th>Claimed</th><th>Approved</th><th>Recoverable</th></tr></thead>\n      <tbody><tr><td>Part</td><td>$620</td><td>$620</td><td>$434</td></tr><tr><td>Labor</td><td>$480</td><td>$360</td><td>$252</td></tr><tr><td>Logistics</td><td>$220</td><td>$140</td><td>$98</td></tr><tr><td>Admin</td><td>$120</td><td>$120</td><td>$84</td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>",
+    "interaction": {
+      "type": "dialog",
+      "label": "클레임 판정",
+      "title": "Warranty Claim Adjudication",
+      "body": "정책, VIN, 증거와 책임분담 70/30을 검토합니다.",
+      "confirmLabel": "판정 확정",
+      "outcome": "승인금액 $1,240와 Supplier Recovery $868을 확정했습니다.",
+      "selector": ".apn-ui-flow-node.active span",
+      "targetText": "확정 · 70/30",
+      "initial": "작업을 열어 필수 조건과 결과를 확인하세요."
+    }
   },
   "SF-32": {
     "recordTitle": "OEM 공장 기술지원",
@@ -6431,7 +7231,16 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=service.pfs_solutions_manage_schedule.htm&language=en_US&type=5",
     "featureKo": "기술자·작업지시·이동경로를 지도와 Gantt 일정으로 배차하는 콘솔",
     "badge": "배차·일정",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-32\"><div class=\"apn-ui-field-service\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Scheduling Console</h3><span class=\"apn-lex-chip\">Summer ’26</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-gantt\"><div class=\"labels\"><span>Kim</span><span>Lee</span><span>Park</span></div><div class=\"grid\"><i style=\"grid-column:1/4\">OEM A · 진동 분석</i><i style=\"grid-column:4/7\">이동</i><i style=\"grid-column:7/11\">OEM B · Tear-down</i><i style=\"grid-column:2/6\">Plant 3 · 긴급지원</i><i style=\"grid-column:6/9\">부품교체</i><i style=\"grid-column:9/12\">보고</i></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Dynamic Map</h3><span class=\"apn-lex-chip\">3 technicians</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-map mini\" viewBox=\"0 0 300 170\" role=\"img\" aria-label=\"기술자와 현장 위치\"><title>기술자와 현장 위치</title><path d=\"M22 132 L90 72 L155 111 L260 42\" class=\"apn-ui-route\"/><circle cx=\"22\" cy=\"132\" r=\"8\"/><circle cx=\"90\" cy=\"72\" r=\"10\"/><circle cx=\"155\" cy=\"111\" r=\"8\"/><circle cx=\"260\" cy=\"42\" r=\"11\" class=\"warn\"/></svg></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-32\"><div class=\"apn-ui-field-service\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Scheduling Console</h3><span class=\"apn-lex-chip\">Summer ’26</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-gantt\"><div class=\"labels\"><span>Kim</span><span>Lee</span><span>Park</span></div><div class=\"grid\"><i style=\"grid-column:1/4\">OEM A · 진동 분석</i><i style=\"grid-column:4/7\">이동</i><i style=\"grid-column:7/11\">OEM B · Tear-down</i><i style=\"grid-column:2/6\">Plant 3 · 긴급지원</i><i style=\"grid-column:6/9\">부품교체</i><i style=\"grid-column:9/12\">보고</i></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Dynamic Map</h3><span class=\"apn-lex-chip\">3 technicians</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-map mini\" viewBox=\"0 0 300 170\" role=\"img\" aria-label=\"기술자와 현장 위치\"><title>기술자와 현장 위치</title><path d=\"M22 132 L90 72 L155 111 L260 42\" class=\"apn-ui-route\"/><circle cx=\"22\" cy=\"132\" r=\"8\"/><circle cx=\"90\" cy=\"72\" r=\"10\"/><circle cx=\"155\" cy=\"111\" r=\"8\"/><circle cx=\"260\" cy=\"42\" r=\"11\" class=\"warn\"/></svg></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "action",
+      "label": "일정 최적화",
+      "selector": ".apn-ui-gantt i:nth-child(4)",
+      "targetText": "Plant 3 · 09:30",
+      "outcome": "긴급 작업을 기술·이동·SLA 제약에 맞춰 재배치했습니다.",
+      "doneLabel": "최적화됨",
+      "initial": "예외를 처리하면 관련 상태가 즉시 갱신됩니다."
+    }
   },
   "SF-33": {
     "recordTitle": "품질·납기 조기경보",
@@ -6458,13 +7267,24 @@ svg {
     ],
     "id": "SF-33",
     "screenKey": "proactive-service",
-    "product": "Agentforce Service",
-    "surface": "Proactive Service Alert",
+    "product": "Agentforce Service + Flow",
+    "surface": "Proactive Service Alert · 통합 구성",
     "sourceLabel": "Proactive Service",
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=service.proactive_service_for_self_service.htm&language=en_US&type=5",
-    "featureKo": "품질·텔레메트리 이상을 감지해 영향 고객, Case와 Agentforce 대응계획을 생성",
+    "featureKo": "외부 품질·텔레메트리 신호를 연결해 영향 고객을 찾고 Case·대응 초안을 사람 승인으로 실행",
     "badge": "선제 서비스",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-33\"><div class=\"apn-ui-proactive\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Proactive Service Alert</h3><span class=\"apn-lex-chip\">High</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-signal\"><span>공정 C14 진동 이상</span><strong>3.8σ</strong><span>영향 Lot 2 · 고객 1 · 출하 4,280 pcs</span></div><svg class=\"apn-ui-chart\" viewBox=\"0 0 420 155\" role=\"img\" aria-label=\"진동 이상 추세\">\n    <title>진동 이상 추세</title>\n    <line x1=\"30\" y1=\"125\" x2=\"390\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <line x1=\"30\" y1=\"25\" x2=\"30\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <polyline points=\"30,103 102,98 174,94 246,77 318,51 390,34\" class=\"apn-ui-line\"/>\n    <circle cx=\"30\" cy=\"103\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"30\" y=\"145\" text-anchor=\"middle\">-5h</text><circle cx=\"102\" cy=\"98\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"102\" y=\"145\" text-anchor=\"middle\">-4h</text><circle cx=\"174\" cy=\"94\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"174\" y=\"145\" text-anchor=\"middle\">-3h</text><circle cx=\"246\" cy=\"77\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"246\" y=\"145\" text-anchor=\"middle\">-2h</text><circle cx=\"318\" cy=\"51\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"318\" y=\"145\" text-anchor=\"middle\">-1h</text><circle cx=\"390\" cy=\"34\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"390\" y=\"145\" text-anchor=\"middle\">현재</text>\n  </svg></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Agentforce Service Plan</h3><span class=\"apn-lex-chip\">검토 필요</span></header>\n    <div class=\"apn-lex-section-body\"><ol class=\"apn-ui-agent-plan\"><li>영향 출하와 고객 식별</li><li>P1 Case 초안 생성</li><li>공장 품질팀 봉쇄 요청</li><li>OEM 선제 연락문 작성</li></ol><button type=\"button\" class=\"btn btn-primary\" disabled>사람에게 승인 요청</button></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-33\"><div class=\"apn-ui-proactive\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Proactive Service Alert</h3><span class=\"apn-lex-chip\">High</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-signal\"><span>공정 C14 진동 이상</span><strong>3.8σ</strong><span>영향 Lot 2 · 고객 1 · 출하 4,280 pcs</span></div><svg class=\"apn-ui-chart\" viewBox=\"0 0 420 155\" role=\"img\" aria-label=\"진동 이상 추세\">\n    <title>진동 이상 추세</title>\n    <line x1=\"30\" y1=\"125\" x2=\"390\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <line x1=\"30\" y1=\"25\" x2=\"30\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <polyline points=\"30,103 102,98 174,94 246,77 318,51 390,34\" class=\"apn-ui-line\"/>\n    <circle cx=\"30\" cy=\"103\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"30\" y=\"145\" text-anchor=\"middle\">-5h</text><circle cx=\"102\" cy=\"98\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"102\" y=\"145\" text-anchor=\"middle\">-4h</text><circle cx=\"174\" cy=\"94\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"174\" y=\"145\" text-anchor=\"middle\">-3h</text><circle cx=\"246\" cy=\"77\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"246\" y=\"145\" text-anchor=\"middle\">-2h</text><circle cx=\"318\" cy=\"51\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"318\" y=\"145\" text-anchor=\"middle\">-1h</text><circle cx=\"390\" cy=\"34\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"390\" y=\"145\" text-anchor=\"middle\">현재</text>\n  </svg></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Agentforce 대응 초안</h3><span class=\"apn-lex-chip\">Flow 승인 필요</span></header>\n    <div class=\"apn-lex-section-body\"><ol class=\"apn-ui-agent-plan\"><li>영향 출하와 고객 식별</li><li>P1 Case 초안 생성</li><li>공장 품질팀 봉쇄 요청</li><li>OEM 연락 초안 작성</li></ol><button type=\"button\" class=\"btn btn-primary\" data-demo-alias>사람에게 승인 요청</button></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "dialog",
+      "label": "선제 대응 승인",
+      "title": "Agentforce 대응 계획",
+      "body": "영향 고객·Lot을 확인하고 Case 생성, 봉쇄 요청, OEM 연락 초안을 승인합니다.",
+      "confirmLabel": "계획 승인",
+      "outcome": "P1 Case와 품질 봉쇄 태스크를 생성하고 OEM 연락 초안을 저장했습니다.",
+      "selector": ".apn-ui-proactive .apn-ui-panel:nth-child(2) header .apn-lex-chip",
+      "targetText": "승인·실행됨",
+      "initial": "작업을 열어 필수 조건과 결과를 확인하세요."
+    }
   },
   "SF-34": {
     "recordTitle": "출하·가격·세금 송장 검증",
@@ -6497,7 +7317,16 @@ svg {
     "sourceUrl": "https://www.salesforce.com/sales/revenue-cloud-billing/",
     "featureKo": "출하·가격·세금·청구 스케줄을 송장 라인과 대조하고 제출상태를 추적",
     "badge": "송장 검증",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-34\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-invoice\">\n    <header><h3>Invoice · INV-2026-8841</h3><span class=\"apn-lex-chip\">Revenue Billing</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">Invoice total</span><strong>$1.72M</strong><span class=\"text-small\">USD</span></div><div><span class=\"text-small text-muted\">Matched</span><strong>98.6%</strong><span class=\"text-small\">출하·가격</span></div><div><span class=\"text-small text-muted\">Due date</span><strong>2026-09-30</strong><span class=\"text-small\">Net 60</span></div>\n  </div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>Invoice line</th><th>Shipment</th><th>Agreement price</th><th>Billed</th><th>Match</th></tr></thead>\n      <tbody><tr><td>Housing LH · 21,000</td><td>ASN-77102</td><td>$39.80</td><td>$835,800</td><td><span class=\"apn-lex-chip is-ok\">일치</span></td></tr><tr><td>Housing RH · 20,400</td><td>ASN-77103</td><td>$40.10</td><td>$818,040</td><td><span class=\"apn-lex-chip is-ok\">일치</span></td></tr><tr><td>Premium freight</td><td>CASE-2208</td><td>승인 없음</td><td>$18,400</td><td><span class=\"apn-lex-chip is-warning\">예외</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-34\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-invoice\">\n    <header><h3>Invoice · INV-2026-8841</h3><span class=\"apn-lex-chip\">Revenue Billing</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">Invoice total</span><strong>$1.72M</strong><span class=\"text-small\">USD</span></div><div><span class=\"text-small text-muted\">Matched</span><strong>98.6%</strong><span class=\"text-small\">출하·가격</span></div><div><span class=\"text-small text-muted\">Due date</span><strong>2026-09-30</strong><span class=\"text-small\">Net 60</span></div>\n  </div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table\">\n      <thead><tr><th>Invoice line</th><th>Shipment</th><th>Agreement price</th><th>Billed</th><th>Match</th></tr></thead>\n      <tbody><tr><td>Housing LH · 21,000</td><td>ASN-77102</td><td>$39.80</td><td>$835,800</td><td><span class=\"apn-lex-chip is-ok\">일치</span></td></tr><tr><td>Housing RH · 20,400</td><td>ASN-77103</td><td>$40.10</td><td>$818,040</td><td><span class=\"apn-lex-chip is-ok\">일치</span></td></tr><tr><td>Premium freight</td><td>CASE-2208</td><td>승인 없음</td><td>$18,400</td><td><span class=\"apn-lex-chip is-warning\">예외</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>",
+    "interaction": {
+      "type": "action",
+      "label": "송장 예외 Case 생성",
+      "selector": ".apn-lex-table tbody tr:nth-child(3) td:last-child",
+      "targetText": "Case 생성",
+      "outcome": "승인 없는 Premium freight 라인을 분쟁 Case로 라우팅했습니다.",
+      "doneLabel": "Case 생성",
+      "initial": "예외를 처리하면 관련 상태가 즉시 갱신됩니다."
+    }
   },
   "SF-35": {
     "recordTitle": "미수금·공제·Debit note 관제",
@@ -6524,13 +7353,33 @@ svg {
     ],
     "id": "SF-35",
     "screenKey": "ar-deduction",
-    "product": "Rootstock ERP + Sales Cloud",
-    "surface": "AR Aging & Deduction Workbench",
-    "sourceLabel": "Rootstock ERP Financials",
+    "product": "ERP + Sales Cloud",
+    "surface": "AR Aging & Deduction View · 통합 구성",
+    "sourceLabel": "Rootstock ERP",
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000005uSuCEAU",
-    "featureKo": "계정별 미수금·Debit note·공제·분쟁과 현금적용을 상업 조치로 연결",
+    "featureKo": "ERP의 미수금·Debit note·현금적용을 계정·프로그램 상업 조치로 연결한 통합 화면",
     "badge": "AR·공제",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-35\"><div class=\"apn-ui-ar\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>AR Aging</h3><span class=\"apn-lex-chip\">Rootstock</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-aging\"><div><strong>$4.8M</strong><span>Current</span></div><div><strong>$1.2M</strong><span>1–30</span></div><div><strong>$0.6M</strong><span>31–60</span></div><div class=\"warn\"><strong>$0.9M</strong><span>61+</span></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Deduction Workbench</h3><span class=\"apn-lex-chip\">7건</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Debit note</th><th>원인</th><th>금액</th><th>조치</th></tr></thead>\n      <tbody><tr><td>DN-4182</td><td>Price mismatch</td><td>$184K</td><td>계약가격 대조</td></tr><tr><td>DN-4188</td><td>Premium freight</td><td>$92K</td><td>승인 증거</td></tr><tr><td>DN-4201</td><td>Warranty offset</td><td>$66K</td><td>Tavant claim 링크</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-35\"><div class=\"apn-ui-ar\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>AR Aging · 통합 조회</h3><span class=\"apn-lex-chip\">ERP 원장</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-aging\"><div><strong>$4.8M</strong><span>Current</span></div><div><strong>$1.2M</strong><span>1–30</span></div><div><strong>$0.6M</strong><span>31–60</span></div><div class=\"warn\"><strong>$0.9M</strong><span>61+</span></div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Deduction Workbench</h3><span class=\"apn-lex-chip\">7건</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Debit note</th><th>원인</th><th>금액</th><th>조치</th></tr></thead>\n      <tbody><tr><td>DN-4182</td><td>Price mismatch</td><td>$184K</td><td>계약가격 대조</td></tr><tr><td>DN-4188</td><td>Premium freight</td><td>$92K</td><td>승인 증거</td></tr><tr><td>DN-4201</td><td>Warranty offset</td><td>$66K</td><td>Tavant claim 링크</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "Debit note",
+      "selector": ".apn-lex-table tbody tr",
+      "options": [
+        {
+          "label": "가격 불일치",
+          "result": "계약가격과 Debit note $184K 차이를 표시했습니다."
+        },
+        {
+          "label": "Premium freight",
+          "result": "운송 승인 증거와 $92K 공제를 표시했습니다."
+        },
+        {
+          "label": "Warranty offset",
+          "result": "Tavant Claim과 $66K 상계 내역을 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-36": {
     "recordTitle": "프로그램·부품 수익성 브리지",
@@ -6563,7 +7412,35 @@ svg {
     "sourceUrl": "https://help.tableau.com/current/pro/desktop/en-us/dashboards.htm",
     "featureKo": "가격·물량·Mix·원자재·물류 변화가 프로그램 마진에 미친 영향을 브리지로 설명",
     "badge": "수익성 브리지",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-36\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-profit\">\n    <header><h3>Program Profitability Bridge</h3><span class=\"apn-lex-chip\">Tableau</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-profit-bridge\"><div class=\"base\"><span>견적 마진</span><strong>16.8%</strong></div><div class=\"negative\"><span>물량</span><strong>-1.2pt</strong></div><div class=\"negative\"><span>원자재</span><strong>-2.4pt</strong></div><div class=\"positive\"><span>가격 회수</span><strong>+0.9pt</strong></div><div class=\"negative\"><span>물류</span><strong>-0.6pt</strong></div><div class=\"total\"><span>현재 마진</span><strong>13.5%</strong></div></div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Action</th><th>Exposure</th><th>Owner</th><th>Due</th></tr></thead>\n      <tbody><tr><td>Al index recovery</td><td>$1.4M</td><td>Pricing</td><td>08-30</td></tr><tr><td>Premium freight claim</td><td>$0.3M</td><td>SCM</td><td>08-12</td></tr><tr><td>ECR quotation</td><td>$0.8M</td><td>Sales</td><td>08-22</td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-36\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-profit\">\n    <header><h3>Program Profitability Bridge</h3><span class=\"apn-lex-chip\">Tableau</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-profit-bridge\"><div class=\"base\"><span>견적 마진</span><strong>16.8%</strong></div><div class=\"negative\"><span>물량</span><strong>-1.2pt</strong></div><div class=\"negative\"><span>원자재</span><strong>-2.4pt</strong></div><div class=\"positive\"><span>가격 회수</span><strong>+0.9pt</strong></div><div class=\"negative\"><span>물류</span><strong>-0.6pt</strong></div><div class=\"total\"><span>현재 마진</span><strong>13.5%</strong></div></div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Action</th><th>Exposure</th><th>Owner</th><th>Due</th></tr></thead>\n      <tbody><tr><td>Al index recovery</td><td>$1.4M</td><td>Pricing</td><td>08-30</td></tr><tr><td>Premium freight claim</td><td>$0.3M</td><td>SCM</td><td>08-12</td></tr><tr><td>ECR quotation</td><td>$0.8M</td><td>Sales</td><td>08-22</td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>",
+    "interaction": {
+      "type": "scenario",
+      "label": "수익성 관점",
+      "options": [
+        {
+          "label": "견적 기준",
+          "result": "견적 기준 마진 16.8%를 표시했습니다.",
+          "metricValue": "16.8%",
+          "metricContext": "견적 마진",
+          "attainment": 100
+        },
+        {
+          "label": "현재 실적",
+          "result": "물량·원자재·물류 영향 후 13.5%를 표시했습니다.",
+          "metricValue": "13.5%",
+          "metricContext": "현재 마진",
+          "attainment": 90
+        },
+        {
+          "label": "회수 후",
+          "result": "가격회수 조치 완료 시 14.4%를 표시했습니다.",
+          "metricValue": "14.4%",
+          "metricContext": "회수 후 마진",
+          "attainment": 96
+        }
+      ],
+      "initial": "시나리오를 바꾸면 화면과 KPI가 함께 갱신됩니다."
+    }
   },
   "SF-37": {
     "recordTitle": "사업전략 실행 · FY26 Q3",
@@ -6596,7 +7473,35 @@ svg {
     "sourceUrl": "https://help.salesforce.com/s/articleView?id=sf.analytics_overview.htm&language=en_US&type=5",
     "featureKo": "수주율·시장점유·수익성·고객성과를 목표와 비교하고 경영조치로 연결",
     "badge": "전략 KPI",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-37\"><div class=\"apn-ui-strategy\">\n      \n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">New business win rate</span><strong>31%</strong><span class=\"text-small\">목표 35%</span></div><div><span class=\"text-small text-muted\">EV revenue mix</span><strong>44%</strong><span class=\"text-small\">목표 50%</span></div><div><span class=\"text-small text-muted\">Program margin</span><strong>14.2%</strong><span class=\"text-small\">목표 15%</span></div>\n  </div>\n      <div class=\"apn-ui-dashboard-grid\">\n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>전략 목표 추세</h3><span class=\"apn-lex-chip\">Lightning Dashboard</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-chart\" viewBox=\"0 0 420 155\" role=\"img\" aria-label=\"전략 목표 달성 추세\">\n    <title>전략 목표 달성 추세</title>\n    <line x1=\"30\" y1=\"125\" x2=\"390\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <line x1=\"30\" y1=\"25\" x2=\"30\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <polyline points=\"30,87 102,79 174,72 246,64 318,55 390,47\" class=\"apn-ui-line\"/>\n    <circle cx=\"30\" cy=\"87\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"30\" y=\"145\" text-anchor=\"middle\">Q1</text><circle cx=\"102\" cy=\"79\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"102\" y=\"145\" text-anchor=\"middle\">Q2</text><circle cx=\"174\" cy=\"72\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"174\" y=\"145\" text-anchor=\"middle\">Q3</text><circle cx=\"246\" cy=\"64\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"246\" y=\"145\" text-anchor=\"middle\">Q4</text><circle cx=\"318\" cy=\"55\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"318\" y=\"145\" text-anchor=\"middle\">Q5</text><circle cx=\"390\" cy=\"47\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"390\" y=\"145\" text-anchor=\"middle\">Q6</text>\n  </svg></div>\n  </section>\n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>경영 조치</h3><span class=\"apn-lex-chip\">4건</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-action-list\"><li>APAC EV 파이프라인 +$18M</li><li>OEM B 가격회수 가속</li><li>ICE EOP 자산 노출 검토</li><li>Q3 계정계획 갱신</li></div></div>\n  </section></div>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-37\"><div class=\"apn-ui-strategy\">\n      \n  <div class=\"apn-ui-metrics\">\n    <div><span class=\"text-small text-muted\">New business win rate</span><strong>31%</strong><span class=\"text-small\">목표 35%</span></div><div><span class=\"text-small text-muted\">EV revenue mix</span><strong>44%</strong><span class=\"text-small\">목표 50%</span></div><div><span class=\"text-small text-muted\">Program margin</span><strong>14.2%</strong><span class=\"text-small\">목표 15%</span></div>\n  </div>\n      <div class=\"apn-ui-dashboard-grid\">\n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>전략 목표 추세</h3><span class=\"apn-lex-chip\">Lightning Dashboard</span></header>\n    <div class=\"apn-lex-section-body\"><svg class=\"apn-ui-chart\" viewBox=\"0 0 420 155\" role=\"img\" aria-label=\"전략 목표 달성 추세\">\n    <title>전략 목표 달성 추세</title>\n    <line x1=\"30\" y1=\"125\" x2=\"390\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <line x1=\"30\" y1=\"25\" x2=\"30\" y2=\"125\" class=\"apn-ui-axis\"/>\n    <polyline points=\"30,87 102,79 174,72 246,64 318,55 390,47\" class=\"apn-ui-line\"/>\n    <circle cx=\"30\" cy=\"87\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"30\" y=\"145\" text-anchor=\"middle\">Q1</text><circle cx=\"102\" cy=\"79\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"102\" y=\"145\" text-anchor=\"middle\">Q2</text><circle cx=\"174\" cy=\"72\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"174\" y=\"145\" text-anchor=\"middle\">Q3</text><circle cx=\"246\" cy=\"64\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"246\" y=\"145\" text-anchor=\"middle\">Q4</text><circle cx=\"318\" cy=\"55\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"318\" y=\"145\" text-anchor=\"middle\">Q5</text><circle cx=\"390\" cy=\"47\" r=\"4\" class=\"apn-ui-mark\"/><text x=\"390\" y=\"145\" text-anchor=\"middle\">Q6</text>\n  </svg></div>\n  </section>\n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>경영 조치</h3><span class=\"apn-lex-chip\">4건</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-action-list\"><li>APAC EV 파이프라인 +$18M</li><li>OEM B 가격회수 가속</li><li>ICE EOP 자산 노출 검토</li><li>Q3 계정계획 갱신</li></div></div>\n  </section></div>\n    </div></div>",
+    "interaction": {
+      "type": "scenario",
+      "label": "경영 기간",
+      "options": [
+        {
+          "label": "FY26 Q2",
+          "result": "Q2 전략 KPI와 미완료 경영조치를 표시했습니다.",
+          "metricValue": "78%",
+          "metricContext": "전략 목표 달성도",
+          "attainment": 78
+        },
+        {
+          "label": "FY26 Q3",
+          "result": "Q3 Commit과 가격회수 실행을 표시했습니다.",
+          "metricValue": "84%",
+          "metricContext": "전략 목표 달성도",
+          "attainment": 84
+        },
+        {
+          "label": "FY26 Q4",
+          "result": "Q4 목표 전망과 EOP 위험을 표시했습니다.",
+          "metricValue": "89%",
+          "metricContext": "전략 목표 전망",
+          "attainment": 89
+        }
+      ],
+      "initial": "시나리오를 바꾸면 화면과 KPI가 함께 갱신됩니다."
+    }
   },
   "SF-38": {
     "recordTitle": "CRM–ERP–MES–PLM–QMS 백본",
@@ -6629,7 +7534,16 @@ svg {
     "sourceUrl": "https://docs.mulesoft.com/partner-manager/latest/",
     "featureKo": "ERP·MES·PLM·QMS·EDI API의 처리량, 지연, 오류와 재처리를 관제하는 화면",
     "badge": "통합 관제",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-38\"><div class=\"apn-ui-monitor\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Integration Topology</h3><span class=\"apn-lex-chip\">Anypoint</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-topology\"><div class=\"hub\">MuleSoft<br/>API & B2B</div><div style=\"--x:8%;--y:18%\">SAP S/4</div><div style=\"--x:72%;--y:10%\">MES</div><div style=\"--x:82%;--y:62%\">PLM</div><div style=\"--x:10%;--y:70%\">QMS</div><div style=\"--x:44%;--y:82%\">OEM EDI</div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Runtime & Message Health</h3><span class=\"apn-lex-chip\">Last 24h</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Flow/API</th><th>처리량</th><th>P95</th><th>오류</th></tr></thead>\n      <tbody><tr><td>Order-to-CRM</td><td>184K</td><td>1.8s</td><td>0.02%</td></tr><tr><td>DELFOR inbound</td><td>42K</td><td>2.6s</td><td>0.11%</td></tr><tr><td>PLM product sync</td><td>8K</td><td>4.1s</td><td>0.04%</td></tr><tr><td>QMS Case link</td><td>1.2K</td><td>1.2s</td><td>0.00%</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-38\"><div class=\"apn-ui-monitor\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Integration Topology</h3><span class=\"apn-lex-chip\">Anypoint</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-topology\"><div class=\"hub\">MuleSoft<br/>API & B2B</div><div style=\"--x:8%;--y:18%\">SAP S/4</div><div style=\"--x:72%;--y:10%\">MES</div><div style=\"--x:82%;--y:62%\">PLM</div><div style=\"--x:10%;--y:70%\">QMS</div><div style=\"--x:44%;--y:82%\">OEM EDI</div></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Runtime & Message Health</h3><span class=\"apn-lex-chip\">Last 24h</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Flow/API</th><th>처리량</th><th>P95</th><th>오류</th></tr></thead>\n      <tbody><tr><td>Order-to-CRM</td><td>184K</td><td>1.8s</td><td>0.02%</td></tr><tr><td>DELFOR inbound</td><td>42K</td><td>2.6s</td><td>0.11%</td></tr><tr><td>PLM product sync</td><td>8K</td><td>4.1s</td><td>0.04%</td></tr><tr><td>QMS Case link</td><td>1.2K</td><td>1.2s</td><td>0.00%</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "action",
+      "label": "실패 흐름 재실행",
+      "selector": ".apn-lex-table tbody tr:nth-child(2) td:last-child",
+      "targetText": "0.00%",
+      "outcome": "DELFOR 처리 흐름을 재실행해 오류율을 0.00%로 갱신했습니다.",
+      "doneLabel": "정상",
+      "initial": "예외를 처리하면 관련 상태가 즉시 갱신됩니다."
+    }
   },
   "SF-39": {
     "recordTitle": "고객·프로그램 상업 리스크",
@@ -6656,13 +7570,37 @@ svg {
     ],
     "id": "SF-39",
     "screenKey": "risk-register",
-    "product": "Sales Cloud + Data 360",
-    "surface": "Commercial Risk Register",
-    "sourceLabel": "Data 360 Identity Resolution",
-    "sourceUrl": "https://help.salesforce.com/s/articleView?id=data.c360_a_identity_resolution_unify_individuals.htm&language=en_US&type=5",
-    "featureKo": "고객집중·단일소싱·환율·신용 신호를 기회별 위험점수와 완화조치로 관리",
+    "product": "Sales Cloud + Data 360 + Flow",
+    "surface": "Commercial Risk Register · 구성 예시",
+    "sourceLabel": "Data 360 Object Model",
+    "sourceUrl": "https://developer.salesforce.com/docs/data/data-cloud-dev/guide/dc-object-model.html",
+    "featureKo": "Custom Object·Flow로 리스크를 관리하고 Data 360으로 외부 신호를 연결한 구성 예시",
     "badge": "리스크 레지스터",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-39\"><div class=\"apn-ui-risk\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Commercial Risk Matrix</h3><span class=\"apn-lex-chip\">Data 360 signals</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-risk-matrix\"><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"high\">OEM 집중</i><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"high\">단일소싱</i><i class=\"\"></i><i class=\"\"></i><i class=\"medium\">환율</i><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"medium\">신용</i><i class=\"\"></i></div><div class=\"apn-ui-risk-axis\"><span>영향도 →</span><span>발생가능성 ↑</span></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Risk Register</h3><span class=\"apn-lex-chip\">6 open</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Risk</th><th>Score</th><th>Exposure</th><th>Mitigation</th></tr></thead>\n      <tbody><tr><td>OEM A concentration</td><td>16</td><td>$42M</td><td>플랫폼 다변화</td></tr><tr><td>Single-source resin</td><td>15</td><td>$8M</td><td>2nd source PPAP</td></tr><tr><td>FX EUR/KRW</td><td>10</td><td>$5M</td><td>가격조항</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-39\"><div class=\"apn-ui-risk\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Commercial Risk Matrix · 구성</h3><span class=\"apn-lex-chip\">Data 360 신호</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-risk-matrix\"><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"high\">OEM 집중</i><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"high\">단일소싱</i><i class=\"\"></i><i class=\"\"></i><i class=\"medium\">환율</i><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"medium\">신용</i><i class=\"\"></i></div><div class=\"apn-ui-risk-axis\"><span>영향도 →</span><span>발생가능성 ↑</span></div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Risk Register</h3><span class=\"apn-lex-chip\">6 open</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Risk</th><th>Score</th><th>Exposure</th><th>Mitigation</th></tr></thead>\n      <tbody><tr><td>OEM A concentration</td><td>16</td><td>$42M</td><td>플랫폼 다변화</td></tr><tr><td>Single-source resin</td><td>15</td><td>$8M</td><td>2nd source PPAP</td></tr><tr><td>FX EUR/KRW</td><td>10</td><td>$5M</td><td>가격조항</td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "리스크",
+      "selector": ".apn-ui-risk-matrix i:not(:empty)",
+      "options": [
+        {
+          "label": "OEM 집중",
+          "result": "고객 집중 노출 $42M과 플랫폼 다변화 조치를 표시했습니다."
+        },
+        {
+          "label": "단일소싱",
+          "result": "Resin 단일소싱 노출 $8M과 2nd source PPAP를 표시했습니다."
+        },
+        {
+          "label": "환율",
+          "result": "EUR/KRW 노출 $5M과 가격조항 완화를 표시했습니다."
+        },
+        {
+          "label": "신용",
+          "result": "외부 신용신호와 계정별 대응을 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-40": {
     "recordTitle": "QMS 사건–계정·프로그램 연결",
@@ -6695,7 +7633,15 @@ svg {
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3000000B5PNxEAN",
     "featureKo": "부적합·근본원인·시정조치·효과검증을 고객 Case와 프로그램에 연결",
     "badge": "CAPA",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-40\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-capa\">\n    <header><h3>CAPA · CQA-2026-188</h3><span class=\"apn-lex-chip\">ComplianceQuest</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-capa\"><div class=\"apn-ui-capa-stage done\"><strong>Nonconformance</strong><span>CASE C-3188</span></div><div class=\"apn-ui-capa-stage done\"><strong>Root Cause</strong><span>Clamp wear</span></div><div class=\"apn-ui-capa-stage active\"><strong>Corrective Action</strong><span>Fixture redesign</span></div><div class=\"apn-ui-capa-stage\"><strong>Effectiveness</strong><span>30-day audit</span></div></div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Evidence</th></tr></thead>\n      <tbody><tr><td>Replace fixture</td><td>Plant Eng.</td><td>08-02</td><td>WO-8821</td></tr><tr><td>Update control plan</td><td>Quality</td><td>08-05</td><td>CP Rev F</td></tr><tr><td>OEM 8D response</td><td>CQE</td><td>08-06</td><td>Draft 03</td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-40\">\n  <section class=\"apn-lex-section apn-ui-panel apn-ui-scene-capa\">\n    <header><h3>CAPA · CQA-2026-188</h3><span class=\"apn-lex-chip\">ComplianceQuest</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-capa\"><div class=\"apn-ui-capa-stage done\"><strong>Nonconformance</strong><span>CASE C-3188</span></div><div class=\"apn-ui-capa-stage done\"><strong>Root Cause</strong><span>Clamp wear</span></div><div class=\"apn-ui-capa-stage active\"><strong>Corrective Action</strong><span>Fixture redesign</span></div><div class=\"apn-ui-capa-stage\"><strong>Effectiveness</strong><span>30-day audit</span></div></div>\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Evidence</th></tr></thead>\n      <tbody><tr><td>Replace fixture</td><td>Plant Eng.</td><td>08-02</td><td>WO-8821</td></tr><tr><td>Update control plan</td><td>Quality</td><td>08-05</td><td>CP Rev F</td></tr><tr><td>OEM 8D response</td><td>CQE</td><td>08-06</td><td>Draft 03</td></tr></tbody>\n    </table>\n  </div></div>\n  </section></div>",
+    "interaction": {
+      "type": "advance",
+      "label": "CAPA 단계 진행",
+      "selector": ".apn-ui-capa-stage",
+      "outcome": "시정조치를 완료하고 30일 효과검증을 시작했습니다.",
+      "doneLabel": "효과검증",
+      "initial": "현재 단계와 후속 작업을 확인하세요."
+    }
   },
   "SF-41": {
     "recordTitle": "IATF·IMDS·REACH/RoHS 증거",
@@ -6723,12 +7669,36 @@ svg {
     "id": "SF-41",
     "screenKey": "compliance-evidence",
     "product": "ComplianceQuest / Propel",
-    "surface": "Compliance Obligation & Evidence",
+    "surface": "Compliance Obligation Tracker · 구성 예시",
     "sourceLabel": "ComplianceQuest EQMS",
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3000000B5PNxEAN",
-    "featureKo": "IATF·REACH/RoHS·IMDS 의무, 증거, 승인·만료와 책임자를 추적",
+    "featureKo": "파트너 QMS에 규제 의무·증거·만료를 구성한 예시이며 IMDS·REACH 모듈 범위는 검증 필요",
     "badge": "규제 증거",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-41\"><div class=\"apn-ui-compliance\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Compliance Obligations</h3><span class=\"apn-lex-chip\">IATF · REACH · IMDS</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>의무</th><th>대상</th><th>증거</th><th>승인/만료</th><th>상태</th></tr></thead>\n      <tbody><tr><td>IATF 16949</td><td>Plant KR-1</td><td>Cert + audit</td><td>2027-02-14</td><td><span class=\"apn-lex-chip is-ok\">유효</span></td></tr><tr><td>IMDS 12.0</td><td>EH-800-42</td><td>MDS 99184</td><td>OEM 승인 대기</td><td><span class=\"apn-lex-chip is-warning\">검토</span></td></tr><tr><td>REACH SVHC</td><td>Al supplier</td><td>Declaration</td><td>2026-09-30</td><td><span class=\"apn-lex-chip\">갱신 필요</span></td></tr><tr><td>RoHS</td><td>BMS-96-04</td><td>Test report</td><td>2027-06-01</td><td><span class=\"apn-lex-chip is-ok\">유효</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Evidence Readiness</h3><span class=\"apn-lex-chip\">감사 준비도 93%</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-bar-list\">\n  <div class=\"apn-ui-bar-row\">\n    <span>필수 증거</span><div class=\"apn-lex-bar\"><span style=\"width:95%\"></span></div><strong>118/124</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>승인 유효</span><div class=\"apn-lex-bar\"><span style=\"width:96%\"></span></div><strong>96%</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>오너 배정</span><div class=\"apn-lex-bar\"><span style=\"width:100%\"></span></div><strong>100%</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>90일 내 만료</span><div class=\"apn-lex-bar\"><span style=\"width:58%\"></span></div><strong>12건</strong>\n  </div></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-41\"><div class=\"apn-ui-compliance\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Compliance Obligations · 구성</h3><span class=\"apn-lex-chip\">IATF · REACH · IMDS</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>의무</th><th>대상</th><th>증거</th><th>승인/만료</th><th>상태</th></tr></thead>\n      <tbody><tr><td>IATF 16949</td><td>Plant KR-1</td><td>Cert + audit</td><td>2027-02-14</td><td><span class=\"apn-lex-chip is-ok\">유효</span></td></tr><tr><td>IMDS 12.0</td><td>EH-800-42</td><td>MDS 99184</td><td>OEM 승인 대기</td><td><span class=\"apn-lex-chip is-warning\">검토</span></td></tr><tr><td>REACH SVHC</td><td>Al supplier</td><td>Declaration</td><td>2026-09-30</td><td><span class=\"apn-lex-chip\">갱신 필요</span></td></tr><tr><td>RoHS</td><td>BMS-96-04</td><td>Test report</td><td>2027-06-01</td><td><span class=\"apn-lex-chip is-ok\">유효</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Evidence Readiness</h3><span class=\"apn-lex-chip\">감사 준비도 93%</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-bar-list\">\n  <div class=\"apn-ui-bar-row\">\n    <span>필수 증거</span><div class=\"apn-lex-bar\"><span style=\"width:95%\"></span></div><strong>118/124</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>승인 유효</span><div class=\"apn-lex-bar\"><span style=\"width:96%\"></span></div><strong>96%</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>오너 배정</span><div class=\"apn-lex-bar\"><span style=\"width:100%\"></span></div><strong>100%</strong>\n  </div>\n  <div class=\"apn-ui-bar-row\">\n    <span>90일 내 만료</span><div class=\"apn-lex-bar\"><span style=\"width:58%\"></span></div><strong>12건</strong>\n  </div></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "inspect",
+      "label": "컴플라이언스 의무",
+      "selector": ".apn-lex-table tbody tr",
+      "options": [
+        {
+          "label": "IATF 16949",
+          "result": "Plant KR-1 인증서와 감사증거를 표시했습니다."
+        },
+        {
+          "label": "IMDS",
+          "result": "MDS 99184와 OEM 승인대기 상태를 표시했습니다."
+        },
+        {
+          "label": "REACH",
+          "result": "90일 내 갱신할 SVHC Declaration을 표시했습니다."
+        },
+        {
+          "label": "RoHS",
+          "result": "BMS-96-04 시험성적서와 유효기간을 표시했습니다."
+        }
+      ],
+      "initial": "항목을 선택해 세부 맥락을 확인하세요."
+    }
   },
   "SF-42": {
     "recordTitle": "금형·검사구·고객 소유자산",
@@ -6755,13 +7725,21 @@ svg {
     ],
     "id": "SF-42",
     "screenKey": "tooling-assets",
-    "product": "Agentforce Manufacturing + Rootstock",
-    "surface": "Asset & Tooling Readiness",
+    "product": "Salesforce Assets + Rootstock",
+    "surface": "Asset & Tooling Readiness · 구성 예시",
     "sourceLabel": "Rootstock ERP",
     "sourceUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000005uSuCEAU",
-    "featureKo": "금형·검사구·설비의 소유권, CAPEX, SOP 준비, 청구·회수와 EOP 처분을 관리",
+    "featureKo": "Salesforce Assets와 ERP 자산 데이터를 연결해 금형 준비·청구·EOP 상태를 가시화",
     "badge": "금형·자산",
-    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-42\"><div class=\"apn-ui-tooling\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Asset & Tooling Readiness</h3><span class=\"apn-lex-chip\">SOP 2027-09</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Asset</th><th>Ownership</th><th>CAPEX</th><th>Readiness</th><th>Billing</th></tr></thead>\n      <tbody><tr><td>Die Set DS-44</td><td>OEM A</td><td>$1.2M</td><td>92%</td><td><span class=\"apn-lex-chip\">70% 청구</span></td></tr><tr><td>Gauge G-18</td><td>Supplier</td><td>$180K</td><td>100%</td><td><span class=\"apn-lex-chip is-ok\">완료</span></td></tr><tr><td>Line Fixture F-08</td><td>Supplier</td><td>$420K</td><td>74%</td><td><span class=\"apn-lex-chip is-warning\">미청구</span></td></tr><tr><td>Spare Die SD-02</td><td>OEM A</td><td>$360K</td><td>48%</td><td><span class=\"apn-lex-chip\">제작 중</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Lifecycle</h3><span class=\"apn-lex-chip\">Rootstock</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-asset-lifecycle\"><div class=\"done\"><strong>승인</strong><span>CAPEX</span></div><div class=\"done\"><strong>제작</strong><span>Try-out</span></div><div class=\"active\"><strong>SOP 준비</strong><span>Run@Rate</span></div><div><strong>유지</strong><span>PM</span></div><div><strong>EOP</strong><span>처분</span></div></div></div>\n  </section>\n    </div></div>"
+    "scene": "<div class=\"apn-ui-scene\" data-scene-id=\"SF-42\"><div class=\"apn-ui-tooling\">\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Asset & Tooling Readiness · 구성</h3><span class=\"apn-lex-chip\">SOP 2027-09</span></header>\n    <div class=\"apn-lex-section-body\">\n  <div class=\"apn-lex-table-wrap\">\n    <table class=\"apn-lex-table apn-ui-compact-table\">\n      <thead><tr><th>Asset</th><th>Ownership</th><th>CAPEX</th><th>Readiness</th><th>Billing</th></tr></thead>\n      <tbody><tr><td>Die Set DS-44</td><td>OEM A</td><td>$1.2M</td><td>92%</td><td><span class=\"apn-lex-chip\">70% 청구</span></td></tr><tr><td>Gauge G-18</td><td>Supplier</td><td>$180K</td><td>100%</td><td><span class=\"apn-lex-chip is-ok\">완료</span></td></tr><tr><td>Line Fixture F-08</td><td>Supplier</td><td>$420K</td><td>74%</td><td><span class=\"apn-lex-chip is-warning\">미청구</span></td></tr><tr><td>Spare Die SD-02</td><td>OEM A</td><td>$360K</td><td>48%</td><td><span class=\"apn-lex-chip\">제작 중</span></td></tr></tbody>\n    </table>\n  </div></div>\n  </section>\n      \n  <section class=\"apn-lex-section apn-ui-panel \">\n    <header><h3>Lifecycle</h3><span class=\"apn-lex-chip\">Rootstock</span></header>\n    <div class=\"apn-lex-section-body\"><div class=\"apn-ui-asset-lifecycle\"><div class=\"done\"><strong>승인</strong><span>CAPEX</span></div><div class=\"done\"><strong>제작</strong><span>Try-out</span></div><div class=\"active\"><strong>SOP 준비</strong><span>Run@Rate</span></div><div><strong>유지</strong><span>PM</span></div><div><strong>EOP</strong><span>처분</span></div></div></div>\n  </section>\n    </div></div>",
+    "interaction": {
+      "type": "advance",
+      "label": "자산 단계 진행",
+      "selector": ".apn-ui-asset-lifecycle > div",
+      "outcome": "SOP 준비 Gate를 완료하고 유지관리 단계로 이동했습니다.",
+      "doneLabel": "유지관리",
+      "initial": "현재 단계와 후속 작업을 확인하세요."
+    }
   }
 };
     const salesforceFitMeta = {
@@ -6911,6 +7889,231 @@ svg {
         .join("");
     }
 
+    function salesforceDemoControls(spec) {
+      const demo = spec.interaction;
+      if (!demo) return "";
+      const output =
+        '<output class="text-small" data-demo-output aria-live="polite">' +
+        escapeHtml(demo.initial || "") +
+        "</output>";
+      if (demo.type === "inspect" || demo.type === "scenario") {
+        return `
+          <div class="apn-demo" data-demo-type="${escapeHtml(demo.type)}">
+            <div class="apn-demo-controls">
+              <label class="form-label">${escapeHtml(demo.label)}
+                <select class="form-select" data-demo-select>
+                  ${demo.options
+                    .map(
+                      (option, index) =>
+                        '<option value="' +
+                        index +
+                        '">' +
+                        escapeHtml(option.label) +
+                        "</option>",
+                    )
+                    .join("")}
+                </select>
+              </label>
+            </div>
+            ${output}
+          </div>`;
+      }
+      if (demo.type === "range") {
+        return `
+          <div class="apn-demo" data-demo-type="range">
+            <div class="apn-demo-controls">
+              <label class="form-label">${escapeHtml(demo.label)}
+                <span class="apn-demo-range">
+                  <input class="form-range" type="range" min="${demo.min}" max="${demo.max}" step="${demo.step}" value="${demo.value}" data-demo-range>
+                  <strong data-demo-range-value>${escapeHtml(String(demo.value) + demo.unit)}</strong>
+                </span>
+              </label>
+              <button class="btn btn-primary" type="button" data-demo-primary>${escapeHtml(demo.actionLabel)}</button>
+            </div>
+            ${output}
+          </div>`;
+      }
+      if (demo.type === "dialog") {
+        const dialogId = "apn-demo-dialog-" + spec.id;
+        return `
+          <div class="apn-demo" data-demo-type="dialog">
+            <div class="apn-demo-controls">
+              <button class="btn btn-primary" type="button" data-demo-primary aria-haspopup="dialog" aria-controls="${escapeHtml(dialogId)}">${escapeHtml(demo.label)}</button>
+            </div>
+            ${output}
+            <dialog class="apn-demo-dialog" id="${escapeHtml(dialogId)}">
+              <header><h3>${escapeHtml(demo.title)}</h3></header>
+              <div class="apn-demo-dialog-body"><p>${escapeHtml(demo.body)}</p></div>
+              <footer>
+                <button class="btn btn-ghost" type="button" data-demo-dialog-cancel>취소</button>
+                <button class="btn btn-primary" type="button" data-demo-dialog-confirm>${escapeHtml(demo.confirmLabel)}</button>
+              </footer>
+            </dialog>
+          </div>`;
+      }
+      return `
+        <div class="apn-demo" data-demo-type="${escapeHtml(demo.type)}">
+          <div class="apn-demo-controls">
+            <button class="btn btn-primary" type="button" data-demo-primary>${escapeHtml(demo.label)}</button>
+          </div>
+          ${output}
+        </div>`;
+    }
+
+    function demoText(template, value) {
+      return String(template || "").replaceAll("{value}", String(value));
+    }
+
+    function setSalesforceDemoOutput(text) {
+      const output = elements.sfRecord.querySelector("[data-demo-output]");
+      if (output) output.textContent = text;
+    }
+
+    function updateSalesforceDemoMetric(option) {
+      if (!option || option.metricValue === undefined) return;
+      const value = elements.sfRecord.querySelector(".apn-sf-kpi-value");
+      const context = elements.sfRecord.querySelector(".apn-sf-kpi-context");
+      const track = elements.sfRecord.querySelector(".apn-sf-kpi-track > span");
+      if (value) value.textContent = option.metricValue;
+      if (context && option.metricContext) context.textContent = option.metricContext;
+      if (track && option.attainment !== undefined) {
+        track.style.width =
+          Math.max(0, Math.min(100, Number(option.attainment))) + "%";
+      }
+    }
+
+    function selectSalesforceDemoTarget(selector, index) {
+      const scene = elements.sfRecord.querySelector(".apn-ui-scene");
+      if (!scene) return null;
+      const targets = [...scene.querySelectorAll(selector)];
+      targets.forEach((target) => target.classList.remove("is-demo-selected"));
+      const selected = targets[index % Math.max(1, targets.length)];
+      if (selected) selected.classList.add("is-demo-selected");
+      return selected || null;
+    }
+
+    function closeSalesforceDemoDialog(dialog) {
+      if (!dialog) return;
+      if (typeof dialog.close === "function") dialog.close();
+      else dialog.removeAttribute("open");
+    }
+
+    function initSalesforceDemo(spec) {
+      const demo = spec.interaction;
+      if (!demo) return;
+      const select = elements.sfRecord.querySelector("[data-demo-select]");
+      const primary = elements.sfRecord.querySelector("[data-demo-primary]");
+      const rangeInput = elements.sfRecord.querySelector("[data-demo-range]");
+      const rangeValue = elements.sfRecord.querySelector("[data-demo-range-value]");
+      const dialog = elements.sfRecord.querySelector(".apn-demo-dialog");
+      const scene = elements.sfRecord.querySelector(".apn-ui-scene");
+
+      const applySelection = (index) => {
+        const option = demo.options[index];
+        if (!option) return;
+        const selector =
+          demo.selector ||
+          ".apn-lex-table tbody tr, .apn-ui-flow-node, .apn-ui-bar-row";
+        const selected = selectSalesforceDemoTarget(selector, index);
+        if (!selected) {
+          selectSalesforceDemoTarget(".apn-ui-scene > *", index);
+        }
+        setSalesforceDemoOutput(option.result);
+        updateSalesforceDemoMetric(option);
+      };
+
+      if (select) {
+        select.addEventListener("change", () => {
+          applySelection(Number(select.value));
+        });
+        applySelection(Number(select.value));
+      }
+
+      if (rangeInput && rangeValue) {
+        rangeInput.addEventListener("input", () => {
+          rangeValue.textContent = rangeInput.value + demo.unit;
+        });
+      }
+
+      if (primary && demo.type === "range") {
+        primary.addEventListener("click", () => {
+          const currentValue = rangeInput ? rangeInput.value : demo.value;
+          const target = scene?.querySelector(demo.selector);
+          if (target) {
+            target.textContent = demoText(demo.targetTemplate, currentValue);
+            target.classList.add("is-demo-updated");
+          }
+          setSalesforceDemoOutput(demoText(demo.outcomeTemplate, currentValue));
+          primary.textContent = "계산 완료";
+        });
+      } else if (primary && demo.type === "advance") {
+        primary.addEventListener("click", () => {
+          const targets = scene ? [...scene.querySelectorAll(demo.selector)] : [];
+          const activeIndex = targets.findIndex(
+            (target) =>
+              target.classList.contains("active") ||
+              target.classList.contains("is-current"),
+          );
+          const currentIndex = activeIndex >= 0 ? activeIndex : 0;
+          const nextIndex = Math.min(targets.length - 1, currentIndex + 1);
+          if (targets[currentIndex]) {
+            targets[currentIndex].classList.remove("active", "is-current");
+            targets[currentIndex].classList.add("done");
+          }
+          if (targets[nextIndex]) {
+            targets[nextIndex].classList.remove("done");
+            targets[nextIndex].classList.add("active", "is-demo-updated");
+          }
+          setSalesforceDemoOutput(demo.outcome);
+          primary.textContent = demo.doneLabel;
+          primary.disabled = true;
+        });
+      } else if (primary && demo.type === "action") {
+        primary.addEventListener("click", () => {
+          const target = scene?.querySelector(demo.selector);
+          if (target) {
+            target.textContent = demo.targetText;
+            target.classList.add("is-demo-updated");
+          }
+          setSalesforceDemoOutput(demo.outcome);
+          primary.textContent = demo.doneLabel;
+          primary.disabled = true;
+        });
+      } else if (primary && demo.type === "dialog") {
+        primary.addEventListener("click", () => {
+          if (!dialog) return;
+          if (typeof dialog.showModal === "function") dialog.showModal();
+          else dialog.setAttribute("open", "");
+        });
+        elements.sfRecord
+          .querySelector("[data-demo-dialog-cancel]")
+          ?.addEventListener("click", () => closeSalesforceDemoDialog(dialog));
+        elements.sfRecord
+          .querySelector("[data-demo-dialog-confirm]")
+          ?.addEventListener("click", () => {
+            const target = scene?.querySelector(demo.selector);
+            if (target) {
+              target.textContent = demo.targetText;
+              target.classList.add("is-demo-updated");
+            }
+            setSalesforceDemoOutput(demo.outcome);
+            primary.textContent = demo.confirmLabel + " 완료";
+            closeSalesforceDemoDialog(dialog);
+          });
+      }
+
+      elements.sfRecord.querySelectorAll("[data-demo-alias]").forEach((button) => {
+        button.addEventListener("click", () => primary?.click());
+      });
+      elements.sfRecord.querySelectorAll("[data-demo-option]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (!select) return;
+          select.value = button.dataset.demoOption;
+          select.dispatchEvent(new window.Event("change", { bubbles: true }));
+        });
+      });
+    }
+
     function renderSalesforceIllustration(capability, spec, tasks) {
       const fit = salesforceFitMeta[capability.fit];
       const partnerLabel = capability.partners.length
@@ -6948,15 +8151,23 @@ svg {
               <span class="text-small text-muted">${escapeHtml(partnerLabel)}</span>
               <a class="text-small" href="${escapeHtml(spec.sourceUrl)}" target="_blank" rel="noopener noreferrer">공식 기능 근거 · ${escapeHtml(spec.sourceLabel)}</a>
             </div>
+            ${salesforceDemoControls(spec)}
             <div class="apn-lex-grid">
               <div class="apn-lex-stack">
                 ${spec.scene}
               </div>
               <aside class="apn-lex-stack">
                 <section class="apn-lex-section">
+                  <header><h3>플랫폼 가치</h3><span class="apn-lex-chip">${escapeHtml(fit.label)}</span></header>
+                  <div class="apn-lex-section-body">
+                    <p><strong>${escapeHtml(capability.valueKo)}</strong></p>
+                  </div>
+                </section>
+                <section class="apn-lex-section">
                   <header><h3>연결 프로세스</h3><span class="text-small text-muted">${tasks.length}개</span></header>
                   <div class="apn-lex-section-body">
                     ${tasks
+                      .slice(0, 4)
                       .map(
                         (id) =>
                           '<button class="apn-sf-task-in-screen" type="button" data-sf-task-id="' +
@@ -6966,6 +8177,7 @@ svg {
                           "</button>",
                       )
                       .join("")}
+                    ${tasks.length > 4 ? '<p class="text-small text-muted">외 ' + (tasks.length - 4) + '개 태스크</p>' : ""}
                   </div>
                 </section>
               </aside>
@@ -6974,10 +8186,7 @@ svg {
         </section>`;
     }
 
-    function renderSalesforceDetailView(capability, fit, tasks, links) {
-      const partnerText = capability.partners.length
-        ? capability.partners.join(" · ")
-        : "추가 AppExchange 필수 없음";
+    function renderSalesforceValueView(capability, fit, tasks) {
       return `
         <div class="apn-sf-detail-copy">
           <div class="apn-sf-highlights">
@@ -6991,21 +8200,15 @@ svg {
             <p><strong>실질 가치:</strong> ${escapeHtml(capability.valueKo)}</p>
           </section>
           <section class="apn-sf-record-section">
-            <h3>솔루션 구성</h3>
-            <dl class="apn-detail-grid">
-              <div><dt>Salesforce 표준</dt><dd>${escapeHtml(capability.core)}</dd></div>
-              <div><dt>AppExchange</dt><dd>${escapeHtml(partnerText)}</dd></div>
-              <div><dt>외부 시스템·데이터</dt><dd>${escapeHtml(capability.systems)}</dd></div>
-            </dl>
-          </section>
-          <section class="apn-sf-record-section">
-            <h3>자동화·Agentforce</h3>
-            <p>${escapeHtml(capability.automation)}</p>
-          </section>
-          <section class="apn-sf-record-section">
             <h3>적용 경계</h3>
             <p>${escapeHtml(capability.limitation)}</p>
           </section>
+        </div>`;
+    }
+
+    function renderSalesforceProcessView(tasks) {
+      return `
+        <div class="apn-sf-detail-copy">
           <section class="apn-sf-record-section">
             <h3>지원하는 APQC·TS 태스크</h3>
             <p class="text-small text-muted">태스크를 선택하면 프로세스 아키텍처의 해당 단계로 이동합니다.</p>
@@ -7021,6 +8224,24 @@ svg {
                 )
                 .join("")}
             </div>
+          </section>
+        </div>`;
+    }
+
+    function renderSalesforceSolutionView(capability, links) {
+      const partnerText = capability.partners.length
+        ? capability.partners.join(" · ")
+        : "추가 AppExchange 필수 없음";
+      return `
+        <div class="apn-sf-detail-copy">
+          <section class="apn-sf-record-section">
+            <h3>솔루션 구성</h3>
+            <dl class="apn-detail-grid">
+              <div><dt>Salesforce 표준</dt><dd>${escapeHtml(capability.core)}</dd></div>
+              <div><dt>AppExchange</dt><dd>${escapeHtml(partnerText)}</dd></div>
+              <div><dt>외부 시스템·데이터</dt><dd>${escapeHtml(capability.systems)}</dd></div>
+              <div><dt>자동화·Agentforce</dt><dd>${escapeHtml(capability.automation)}</dd></div>
+            </dl>
           </section>
           <section class="apn-sf-record-section">
             <h3>근거·AppExchange</h3>
@@ -7060,13 +8281,19 @@ svg {
           ? '<span class="viz-badge">현재 프로세스 보완</span>'
           : "";
       const views = [
-        ["screen", "예시 화면"],
-        ["detail", "상세·근거"]
+        ["screen", "체험 화면"],
+        ["value", "업무·가치"],
+        ["process", "프로세스 연결"],
+        ["solution", "솔루션 구성·근거"]
       ];
       const detailContent =
-        selectedSalesforceDetailView === "detail"
-          ? renderSalesforceDetailView(capability, fit, tasks, links)
-          : renderSalesforceIllustration(capability, spec, tasks);
+        selectedSalesforceDetailView === "value"
+          ? renderSalesforceValueView(capability, fit, tasks)
+          : selectedSalesforceDetailView === "process"
+            ? renderSalesforceProcessView(tasks)
+            : selectedSalesforceDetailView === "solution"
+              ? renderSalesforceSolutionView(capability, links)
+              : renderSalesforceIllustration(capability, spec, tasks);
       elements.sfRecord.innerHTML = `
         <header class="apn-sf-record-header">
           <div>
@@ -7117,6 +8344,9 @@ svg {
             navigate(node.id, Math.min(5, node.level + 1), true);
           });
         });
+      if (selectedSalesforceDetailView === "screen") {
+        initSalesforceDemo(spec);
+      }
     }
 
     function renderSalesforceWorkspace() {
